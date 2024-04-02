@@ -1,0 +1,25 @@
+{{ define "header" }}
+  {{ partial "topnav" }}
+{{ end }}
+
+{{ define "main" }}
+    <main class="prose dark:prose-invert container">
+        <header class="text-left pl-4 mb-8 mt-20">
+            <h1 class="text-5xl mb-1">Tags</h1>
+            <p class="my-0 text-gray3">Sail through our articles vast ocean with guiding category topics as your compass.</p>
+        </header>
+
+        <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+
+            {{ range .Pages }}
+            <span class="inline-block p-2 items-center justify-evenly">
+                <a href="{{.Permalink | relURL }}"><span class="tag tag-{{anchorize .Title}} tag-lg hover:scale-110 transition-all duration-300">#{{ anchorize .Title}}</span></a>
+            </span>
+                        {{ end }}
+    </main>
+{{ end }}
+
+{{ define "footer" }}
+	{{ partial "footer" }}
+{{ end }}
+

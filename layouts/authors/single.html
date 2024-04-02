@@ -1,0 +1,57 @@
+{{ define "header" }}
+{{ partial "topnav" }}
+{{ end }}
+{{ define "main" }}
+<main class="container prose dark:prose-invert">
+  <section class="text-center">
+    <h1 class="gradient-text">{{ .Title }}</h1>
+    {{ $authorImg := (print "/authors/img/" (.RelPermalink | path.Base) ".jpg") }}
+
+    <img src="{{ $authorImg }}" alt="author image" class="mx-auto rounded-full max-w-xs select-none drag-none">
+
+    <div class="items-center justify-around">
+
+      {{ range $name, $link := .Params.links }}
+      {{ if $link }}
+      <!-- <a class="btn btn-gray mr-4" href="{{ $link }}">{{ title $name }}</a> -->
+      <!-- <a class="mr-4 mb-4 group relative inline-block focus:outline-none focus:ring" href="{{ $link }}">
+        <span
+        class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-yellow-300 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+        
+        <span
+        class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-gray6 x ">
+        {{ title $name }}
+      </span>
+    </a> -->
+      <a class="mr-4 mb-4 group relative inline-block text-sm font-medium text-white focus:outline-none focus:ring no-underline"
+        href="{{ $link }}">
+        <span
+          class="absolute inset-0 border border-gray81 group-active:border-gray81 rounded-tl-lg rounded-br-lg"></span>
+        <span
+          class="font-bold uppercase block border border-gray81 bg-gray81 px-12 py-3 transition-transform active:border-gray81 active:bg-gray81 group-hover:-translate-x-1 group-hover:-translate-y-1 rounded-tl-lg rounded-br-lg">
+          {{ title $name }}
+        </span>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+
+    <div class="ancor-blue text-gray2">
+      {{ .Content }}
+    </div>
+  </section>
+  <section>
+    <h2 class="text-left">Articles | Content</h2>
+    <div class="grid-list justify-items-center pl-0">
+      {{ range first 4 (where .Site.Pages "Params.author" .Title) }}
+      {{ $img := (print .RelPermalink "img/featured.png") }}
+      {{ partial "card" (dict "context" . "img" $img) }}
+      {{ end }}
+    </div>
+
+  </section>
+</main>
+{{ end }}
+{{ define "footer" }}
+{{ partial "footer" }}
+{{ end }}

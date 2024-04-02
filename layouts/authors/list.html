@@ -1,0 +1,27 @@
+{{ define "header" }}
+  {{ partial "topnav" }}
+{{ end }}
+{{ define "main" }}
+<main class="container prose dark:prose-invert">
+  <header class="text-left mb-8 mt-20 pl-4">
+    <h1 class="text-5xl mb-1">Authors</h1>
+    <p class="my-0 text-gray3">We greatly value the expertise contributed by our authors to our articles.</p>
+  </header>
+
+  <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+  
+  {{ range .Pages }}
+  <article>
+        <a class="mb-6 no-underline" href="{{ .RelPermalink }}">
+        <h2 class="gradient-text inline-block mb-0">{{ .Title }}</h2>
+      </a>  
+        <span class="text-gray3 ancor-blue">{{ .Content }}</span>
+  </article>
+  {{ end }}
+</main>
+{{ end }}
+
+
+{{ define "footer" }}
+  {{ partial "footer" }}
+{{ end }}

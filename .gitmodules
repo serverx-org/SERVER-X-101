@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/SERVER-X-101/server-x-101.github.io.git
+	branch = main

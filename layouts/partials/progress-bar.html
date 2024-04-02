@@ -1,0 +1,23 @@
+<div class="fixed top-0 w-full bg-transparent z-50">
+    <div class="sticky top-0 z-50">
+        <div class="w-full">
+            <div id="myBar" class="h-1 bg-gradient-to-r from-peach to-blue-500 transition-all duration-300 ease-in-out w-0 rounded-full"></div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onscroll = function () { myFunction() };
+
+    function myFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+        var progressContainer = document.getElementById("progressContainer");
+        if (winScroll > 20) {
+            progressContainer.style.display = "block";
+        } else {
+            progressContainer.style.display = "none";
+        }
+    }
+</script>

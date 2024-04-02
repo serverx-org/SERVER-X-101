@@ -1,0 +1,70 @@
+{{ $group := .Page.Scratch.Get "tabGroupIndex" | default 0 }}
+{{ $index := .Page.Scratch.Get "tabElementIndex" | default 0 }}
+{{ $name := .Get "name" | default "Topic" }}
+{{ $icon := (print "svg/" (.Get "icon" | default "terminal") ".svg") }}
+
+<style>
+  .tabs input#tab-{{ $group }}-{{ $index }}:checked ~ .tab-content-{{ $group }}-{{ $index }} {
+    display: block;
+  }
+  
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &.tabs-left {
+    justify-content: flex-start;
+  }
+
+  &.tabs-right {
+    justify-content: flex-end;
+  }
+
+  input.tab-input {
+    display: none;
+  }
+
+  label.tab-label {
+    border-color: transparent;
+    border-radius: 4px 4px 0px 0px;
+    color: #f8f8f8;
+    border-width: 2px;
+    cursor: pointer;
+    display: inline-block;
+    order: 1;
+    padding: 0.3rem 0.6rem;
+    position: relative;
+    top: 1px;
+    user-select: none;
+  }
+  
+  input.tab-input:checked + label.tab-label {
+    border-width: 2px;
+    background-color: #12181b;
+    color: #f8f8f8;
+    border-color: #454e56;
+    border-bottom-style: hidden;
+  }
+
+  .tab-content {
+    display: none;
+    order: 2;
+    width: 100%;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin: 0;
+  }
+}
+</style>
+
+<input type="radio" class="tab-input" name="tab-select-{{ $group }}" id="tab-{{ $group }}-{{ $index }}" {{ if eq $index 0 }}checked{{ end }}>
+<label for="tab-{{ $group }}-{{ $index }}" class="tab-label">
+  <span class="flex flex-row items-center"><span class="w-5 block mr-2">{{ partial $icon }}</span>{{ $name }}</span>
+</label> 
+<div class="tab-content m-0 tab-content-{{ $group }}-{{ $index }}">
+  {{ .Inner | markdownify }}
+</div>
+
+  
+{{ .Page.Scratch.Set "tabElementIndex" (add 1 $index) }}

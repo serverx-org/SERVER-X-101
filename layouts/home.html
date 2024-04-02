@@ -1,0 +1,139 @@
+{{ define "header" }}
+{{ partial "topnav" }}
+{{ end }}
+
+{{ define "main" }}
+<div class="prose dark:prose-invert min-w-full">
+	<div class="container">
+		<div class="flex flex-col md:flex-row md:mt-40 justify-between items-center">
+			<div class="relative md:grid-list md:justify-items-center md:pl-0 lg:flex items-center justify-between">
+				<div
+					class="flex items-center justify-center rounded-lg bg-no-repeat bg-cover md:w-[500px] md:max-w-[700px] md:min-h-[300px] md:mt-0 pl-0">
+					<img class="max-w-sm overflow-hidden shadow-xl bg-gray8 border border-r-2 border-peach1 rounded-full hover:scale-105 transition-transform ease-in-out duration-200 select-none drag-none"
+						src="/img/serverx101-banner.jpeg" alt="SERVER X 101" title="SERVER X 101">
+				</div>
+			</div>
+			<div class="flex flex-col justify-center items-center text-center lg:p-6 md:p-0">
+				<h1 class="text-6xl mb-0 md:text-5xl">
+					Decode <span class="gradient-text">Concepts</span>, Not Code.
+				</h1>
+				<p class="text-2xl text-gray3 items-center justify-between">
+					SERVER X 101 is where <span class="text-yellow-500 font-bold">coffee meets code</span> &&
+					<span class="text-purple-500 font-bold">bugs become features.</span>
+				</p>
+				<div class="lg:h-12"></div>
+				<!-- <scroll-show> -->
+				<a href="#next"
+					class="animate-bounce animate-ease-in-out btn font-semibold align-top btn-green btn-glow mb-[200px] text-2xl no-underline block mt-6">
+					Let's Start
+				</a>
+				<!-- </scroll-show> -->
+			</div>
+
+		</div>
+
+		<div class="text-center mt-40 snap-proximity" id="next">
+			<scroll-show repeat="">
+				<a href="/articles" class="no-underline">
+					<h2 class="bg-green-500 inline-block text-gray7 px-6 py-4 text-6xl shadow-xl rounded-t-lg">Articles
+					</h2>
+				</a>
+			</scroll-show>
+		</div>
+
+
+		<div class="grid place-content-center text-center relative mt-12">
+
+			<div>
+				<scroll-show repeat="">
+					<p class="text-5xl text-gray3 px-4 items-center justify-between">
+						Debugging is like <span class="text-red-500 animate-pulse font-display">finding</span> a needle
+						in a haystack, except the needle is made of hay and the haystack is on fire.
+					</p>
+				</scroll-show>
+				<div class="h-24"></div>
+				<scroll-show>
+					<a href="#coding"
+						class="animate-bounce animate-ease-in-out btn font-semibold align-top btn-orange btn-glow mb-[200px] text-2xl no-underline block mt-6">
+						Escape this?
+					</a>
+				</scroll-show>
+
+			</div>
+			<div class="h-12"></div>
+		</div>
+
+		<div class="text-center mt-32 snap-proximity" id="coding">
+			<scroll-show repeat="">
+				<a href="/snippets" class="no-underline">
+					<h2 class="bg-orange-500 inline-block text-gray7 px-6 py-4 text-6xl shadow-xl rounded-t-lg">Snippets
+					</h2>
+				</a>
+			</scroll-show>
+		</div>
+
+		<div class="grid place-content-center text-center relative lg:mt-12 md:mt-0">
+
+			<div>
+				<scroll-show repeat="">
+					<p class="text-5xl text-gray3 px-4 items-center justify-between">
+						Snippets, like cryptic notes from a mad poet in a dark alley—little sparks of <span
+							class="text-red-500 animate-pulse font-display">brilliance in chaos.</span>
+						Solution? A puzzle for another day.
+					</p>
+				</scroll-show>
+				<scroll-show>
+					<div class="h-12"></div>
+					<a href="#practice"
+						class="animate-bounce animate-ease-in-out btn font-semibold align-top btn-purple btn-glow mb-[200px] text-2xl no-underline block mt-6">
+						How is that Possible?
+					</a>
+				</scroll-show>
+
+			</div>
+		</div>
+
+
+
+		<div class="text-center mt-32 snap-proximity" id="practice">
+			<scroll-show repeat="">
+				<a href="/contests" class="no-underline">
+					<h2 class="bg-purple-500 inline-block text-gray7 px-6 py-4 text-6xl shadow-xl rounded-t-lg">Contests
+					</h2>
+				</a>
+			</scroll-show>
+		</div>
+
+		<div class="grid place-content-center text-center relative lg:mt-12 md:mt-0 mb-28">
+
+			<div>
+				<scroll-show repeat="">
+					<p class="text-5xl text-gray3 px-4 items-center justify-between">
+						Learning programming: a perpetual coding contest where bugs are <span
+							class="text-red-500 animate-pulse font-display">hurdles</span>, functional code is the <span
+							class="text-red-500 animate-pulse font-display">finish line</span>, and satisfaction is the
+						<span class="text-red-500 animate-pulse font-display">gold medal.</span>
+					</p>
+				</scroll-show>
+				<div class="h-2"></div>
+				<scroll-show>
+					<div class="lg:my-12 lg:mb-20 md:mb-0">
+						<a href="/articles"
+							class="animate-bounce animate-ease-in-out btn font-semibold align-top btn-yellow btn-glow mb-[200px] text-2xl no-underline block mt-6">
+							Let's Go!
+						</a>
+					</div>
+				</scroll-show>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer" }}
+{{ end }}

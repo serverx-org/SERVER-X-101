@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://use.typekit.net/rcr1opg.css');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+
+@import './button.scss';
+@import './special-effects.scss';
+@import './contests.scss';
+@import './articles.scss';
+@import './syntax.scss';
+@import './mixins.scss';
+@import './tags.scss';
+// @import './pricing.scss';
+@import './ui.scss';
+
+
+
+
+.selector {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+::selection {
+    color: black;
+    background: white;
+    text-shadow: 1px 1px 2px #008cff;
+    outline: 2px solid rgb(54, 115, 255);
+    caret-color: rgb(32, 19, 23);
+}
+
+::-moz-selection {
+    color: black;
+    background: white;
+    text-shadow: 1px 1px 2px rgba(0, 119, 255, 0.5);
+    outline: 2px solid rgb(54, 115, 255);
+    caret-color: rgb(32, 19, 23);
+}
+
+::-webkit-selection {
+    color: black;
+    background: white;
+    text-shadow: 1px 1px 2px rgba(0, 119, 255, 0.5);
+    outline: 2px solid rgb(54, 115, 255);
+    caret-color: rgb(32, 19, 23);
+}
+
+html {
+    display: block;
+    font-size: 13px;
+    @media (min-width:1024px) {
+        font-size: 16px;
+    }
+    // scroll-behavior: smooth;
+}
+
+// background-color: #000000;
+// background-color: #4d4855;
+
+
+body {
+    @apply dark:bg-gray7 dark:text-gray1;
+    // background-color: #2b4162;
+    // background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+    // background-image: linear-gradient(315deg, #141e30 50%, #243b55 100%);
+    // background-image: linear-gradient(315deg, rgb(27, 18, 21) 50%, #682530 100%);
+    // background-image: linear-gradient(138deg, rgb(34, 18, 23) 50%, #682530 100%);
+    // background-image: linear-gradient(147deg, #682530 50%, rgb(27, 18, 21) 100%);
+    // background-image: linear-gradient(176deg, rgb(32, 19, 23) 50%, #9b37484b 100%);
+    // background-image: linear-gradient(176deg, #a23a4c 0%, #12100e 74%);
+    // background-image: linear-gradient(315deg, #000000 0%, #422419 74%);
+    // background: linear-gradient(315, rgba(18,24,27,1) 50%, rgba(32,39,55,1) 100%);
+    // background: linear-gradient(147deg, rgba(18,24,27,1) 50%, rgba(32,39,55,1) 100%);
+    // background: linear-gradient(315deg, rgb(25, 30, 48) 50%, rgb(21, 27, 39) 100%);
+    background: linear-gradient(176deg, rgb(16, 20, 29) 50%, rgb(25, 30, 48) 100%);
+    // background: linear-gradient(315deg, rgb(93, 41, 54) 50%, rgb(60, 23, 32) 100%);
+    // background: linear-gradient(322deg, rgb(24, 31, 50) 50%, rgb(11, 16, 29) 100%);
+    // background: linear-gradient(142deg, rgb(17, 24, 27) 50%, rgba(32,39,55,1) 100%);
+    // background: linear-gradient(176deg, rgba(18,24,27,1) 50%, rgba(32,39,55,1) 100%);
+    // background: #141E30;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(315deg, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    min-height: 100vh;
+    background-attachment: fixed;
+    @include scrollbar;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-display font-normal;
+}
+
+
+.ancor-blue {
+    p a {
+      @apply text-blue-500 no-underline hover:text-peach1 duration-200;
+    }
+  
+    li a, a {
+      @apply text-blue-500 no-underline hover:text-peach1 duration-200;
+    }
+  }
+
+svg { 
+    width: auto;
+}
+
+figure img {
+    @apply mx-auto;
+}
+
+.container {
+    @apply max-w-screen-2xl mx-auto px-3 md:px-8;
+}
+
+.grid-list {
+    @apply grid grid-cols-1 auto-cols-max gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none;
+}
+
+video-player {
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    } 
+}
+
+.drag-none {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.drop-cap:first-letter {
+    float: left;
+    font-size: 4rem;
+    // line-height: 0.6;
+    padding-right: 0.1em;
+    font-family: 'Mea Culpa', cursive;
+    font-weight: medium;
+    text-transform: uppercase;
+}
+

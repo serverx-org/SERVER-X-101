@@ -1,0 +1,57 @@
+{{ define "header" }}
+{{ partial "topnav" }}
+{{ end }}
+
+{{ define "main"}}
+<main class="prose dark:prose-invert min-w-full grid h-screen place-content-center px-4">
+       <div class="text-center">
+              <h1 class="text-9xl font-black text-gray-200 gradien">404</h1>
+
+              <p class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</p>
+
+              <p class="mt-4 text-gray-500" id="error-message">We can't find that page.</p>
+
+              <button class="btn inline-block font-semibold py-2 px-4 rounded-lg" onclick="history.back();">Go
+                     Back</button> &ensp;
+
+              <a class="btn inline-block font-semibold py-2 px-4 rounded-lg" href="/">Go Home</a>
+
+       </div>
+</main>
+
+<script>
+       window.onload = function () {
+              var messages = [
+                     "Page not found. Looks like a null pointer exception in the matrix.",
+                     "Page not found. It seems our code went for a coffee break.",
+                     "This page is so elusive, it's like trying to debug a Heisenbug.",
+                     "Page not found. Maybe it's hiding in the cloud, but forgot the passphrase.",
+                     "Page not found. Looks like someone tried to divide by zero.",
+                     "This page has been abducted by aliens... or maybe just a sneaky regex.",
+                     "Page not found. It's like searching for a missing semicolon in a haystack.",
+                     "Looks like the page is on strike, demanding better working conditions.",
+                     "Page not found. Must have been deleted during a late-night coding spree.",
+                     "This page is as elusive as a bug in production code.",
+                     "Page not found. It's like trying to access a floppy disk in a world of SSDs.",
+                     "Page not found. Looks like our server went on a vacation to the Bermuda Triangle.",
+                     "Page not found. The code gremlins must be playing hide and seek again.",
+                     "Page not found. Did you check under the keyboard?",
+                     "Page not found. Looks like we hit a deadlock in the cyber universe.",
+                     "Page not found. Maybe it's stuck in an infinite loop. We're still searching.",
+                     "Page not found. It's like searching for a pixel in a bitmap.",
+                     "Page not found. Maybe it's encrypted with ROT13 and we forgot the decoder.",
+                     "Page not found. Looks like our AI intern went rogue and hid it.",
+                     "Page not found. Perhaps it's in the quantum realm, simultaneously existing and not existing.",
+              ];
+
+              var randomIndex = Math.floor(Math.random() * messages.length);
+              var randomMessage = messages[randomIndex];
+              document.getElementById("error-message").innerText = randomMessage;
+       };
+</script>
+
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer" }}
+{{ end }}

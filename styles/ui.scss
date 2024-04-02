@@ -1,0 +1,15 @@
+.box {
+    @apply bg-gray6 bg-opacity-40 shadow-lg border-l-4 border-gray6 py-1 pl-4 rounded-r-lg text-base text-gray3;
+}
+.box-green {
+    @apply border-green-500;
+}
+.box-red {
+    @apply border-red-500;
+}
+.box-yellow {
+    @apply border-yellow-500;
+}
+.box-blue {
+    @apply border-blue-500;
+}

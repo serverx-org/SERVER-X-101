@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="server-x-101: community for programmers and developers">
+  <title>{{ .Page.Title }}</title>
+  <!-- <link rel="canonical" href="{my-hugo-site-page-path}"/> -->
+  <link rel="preconnect">
+  <!-- <link rel="preload"> -->
+  <link rel="dns-prefetch" href="{my-hugo-site-page-path}" />
+  <!-- <link rel="canonical" href="/localhost:4549/"> -->
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/svelte/{{ .Site.Data.svelte.css }}" />
+  <script type="module" defer src="/svelte/{{ .Site.Data.svelte.js }}" />
+  </script>
+
+  <!-- pwa -->
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#4e2334">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#454e56">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  {{ partial "meta" . }}
+
+</head>
+
+<body>
+  <global-data permalink="{{ .Permalink }}" vimeo="{{ .Params.vimeo }}" youtube="{{ .Params.youtube }}"
+    free="{{ .Params.free }}" next="{{with .PrevInSection}}{{.Permalink}}{{end}}"
+    prev="{{with .NextInSection}}{{.Permalink}}{{end}}">
+  </global-data>
+
+  {{ block "header" . }}
+  <!-- navbar -->
+  {{ end }}
+  {{ block "main" . }}
+  <!-- main -->
+  {{ end }}
+  {{ block "footer" . }}
+  <!-- footer -->
+  {{ end }}
+
+  <route-loader>
+    <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+  </route-loader>
+
+  <scroll-up></scroll-up>
+
+  </div>
+
+</body>
+
+</html>

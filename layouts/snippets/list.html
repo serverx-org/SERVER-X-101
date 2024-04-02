@@ -1,0 +1,45 @@
+{{ define "header" }}
+{{ partial "topnav" }}
+{{ end }}
+{{ define "main" }}
+<main class="prose dark:prose-invert container">
+  <header class="text-left pl-4 mb-8 mt-20">
+    <h1 class="text-5xl mb-1 text-gray1" style="text-shadow: 0px 5px #ff7700;">Snippets</h1>
+    <p class="my-0 text-gray3 pt-2">Find helpful code examples for various tasks.</p>
+  </header>
+
+  <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+
+  <ul class="flex flex-col items-stretch pl-0">
+    {{/* {{ $paginator := .Paginate (where .Pages "Type" "articles") 20 }} */}}
+    {{ range .Pages }}
+    <a class="no-underline" href="{{ .RelPermalink }}">
+      <li class="list-none p-4 bg-gray8 shadow-xl rounded-2xl flex justify-between">
+        <span class="truncate">
+          {{ .Title }}
+        </span>
+
+        <span class="truncate">
+          {{ range .Params.tags }}
+          <span class="tag tag-{{ . }}">
+            #{{ . }}
+          </span>
+          {{ end }}
+        </span>
+      </li>
+    </a>
+
+    {{ end }}
+  </ul>
+
+  <div class="h-6"></div>
+  <div class="text-sm sm:text-base md:text-lg lg:text-lg">
+    {{ template "_internal/pagination.html" . }}
+  </div>
+
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer" }}
+{{ end }}

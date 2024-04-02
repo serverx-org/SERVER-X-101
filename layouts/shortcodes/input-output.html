@@ -1,0 +1,27 @@
+{{ $input := .Get "input" | default "sample input" }}
+{{ $output := .Get "output" | default "sample output" }}
+
+<div class="grid w-full rounded-md border-2 border-gray5 divide-y divide-gray5 dark:border-gray-800">
+    <div class="grid sm:grid-cols-2 p-4 gap-4">
+        <div class="grid gap-2.5 lg:min-h-[160px] sm:min-h-[100px] lg:max-h-[190px] sm:max-h-[150px]">
+            <h5 class="text-sm font-medium tracking-tight text-center uppercase">
+                Sample Input
+            </h5>
+            <div class="bg-gray7 bg-opacity-100 flex justify-center lg:min-h-[160px] sm:min-h-[100px] lg:max-h-[190px] sm:max-h-[150px] border border-solid border-gray5 rounded-sm sticky top-0 overflow-auto" id="sidebar" >
+                <span class=" scrollbar text-gray2 rounded-none mt-0 font-code text-base overflow-x-auto flex w-full bg-background px-3 py-3 text-left text-gray-500 dark:text-gray-400">
+                    {{ $input | markdownify }}
+                </span>
+            </div>
+        </div>
+        <div class="grid gap-2.5">
+            <h5 class="text-sm font-medium tracking-tight text-center mt-4 md:mt-0 lg:mt-0">
+                Sample Output
+            </h5>
+            <div class="bg-gray7 bg-opacity-100 flex justify-center lg:min-h-[160px] sm:min-h-[100px] lg:max-h-[190px] sm:max-h-[150px] border border-solid border-gray5 rounded-sm sticky top-0 overflow-auto" id="sidebar" >
+                <span class=" scrollbar text-gray2 rounded-none mt-0 font-code text-base overflow-x-auto flex w-full bg-background px-3 py-3 text-left text-gray-500 dark:text-gray-400">
+                    {{ $output | markdownify }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

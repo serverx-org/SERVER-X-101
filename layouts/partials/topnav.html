@@ -1,0 +1,59 @@
+<!-- Navigation bar -->
+<div class="h-2"></div>
+<nav class="flex justify-between container mx-4">
+
+  <!-- Logo section for large screens -->
+  <a class="hidden md:flex justify-center items-center text-center w-[15%]" href="/">
+    <!-- Main logo image for large screens -->
+    <img id="logo" class="select-none drag-none" src="/img/serverx101-text-logo.png" alt="logo" />
+  </a>
+
+  <!-- Logo section for small screens -->
+  <a class="flex justify-center items-center text-center ml-2 w-12 h-12 md:hidden" href="/">
+    <!-- Main logo image for small screens -->
+    <img id="logo" class="select-none drag-none" src="/img/serverx101-logo.svg" alt="logo" />
+  </a>
+
+  <!-- Menu items -->
+  <ul class="flex justify-center items-center mx-1">
+
+    <!-- About Us link -->
+    <!-- <li class="mx-2 md:mx-4 transition-transform">
+      <a href="/" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide-peach">Home</a>
+    </li> -->
+
+    <!-- Articles link -->
+    <li class="mx-2 md:mx-4 transition-transform">
+      <a href="/articles" class="font-sans text-xl leading-none text-gray2 gradient-slide-peach">Articles</a>
+    </li>
+
+    <!-- Snippets link -->
+    <li class="mx-2 md:mx-4 transition-transform">
+      <a href="/snippets" class="font-sans text-xl leading-none text-gray2 gradient-slide-peach">Snippets</a>
+    </li>
+
+    <!-- Contests link  -->
+    <li class="mx-2 md:mx-4 mr-2 transition-transform">
+      <a href="/contests" class="font-sans text-xl leading-none text-gray2 gradient-slide-peach">Contests</a>
+    </li>
+    <li class="mx-2 md:mx-4 mr-2 transition-transform">
+      <button id="theme-toggle-button">( * )</button>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  // Function to toggle between light and dark themes
+function toggleTheme() {
+  const body = document.body;
+  const articleTitle = document.getElementById('article-title');
+  body.classList.toggle('dark-theme');
+  articleTitle.style.textShadow = body.classList.contains('dark-theme') ? '0px 5px #c3a5f5' : '0px 5px #692dca';
+}
+
+// Event listener for theme toggle button
+document.getElementById('theme-toggle-button').addEventListener('click', function() {
+  toggleTheme();
+});
+
+</script>

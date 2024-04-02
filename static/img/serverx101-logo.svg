@@ -1,0 +1,14 @@
+<svg id="serverx101-logo" data-name="serverx101 logo"  viewBox="0 0 337 299" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <title>server x 101</title>
+    <path d="M324.248 143.5C337.5 231 380.497 298.5 168.748 298.5C-42.9998 298.5 -0.499943 233 13.2484 143.5C13.2484 64.2471 82.8681 0 168.748 0C254.629 0 324.248 64.2471 324.248 143.5Z" fill="url(#paint0_radial_67_16)"/>
+    <ellipse cx="115.764" cy="152.5" rx="31.2147" ry="32.5" fill="#FFCE95"/>
+    <ellipse cx="223.335" cy="152.5" rx="31.2147" ry="32.5" fill="#FFCE95"/>
+    <defs>
+        <radialGradient id="paint0_radial_67_16" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(169.049 152.5) rotate(90) scale(143.5 155.5)">
+            <stop offset="0.842699" stop-color="#361926"/>
+            <stop offset="0.942699" stop-color="#5A2A3F"/>
+            <stop offset="1" stop-color="#EF646E"/>
+        </radialGradient>
+    </defs>
+</svg>

@@ -1,0 +1,237 @@
+.tag {
+    @apply inline-block mr-2 py-1 pb-[5px] px-2 text-xs rounded-full border-none bg-black bg-opacity-30 text-gray3;
+}
+.tag-lg {
+    @apply text-3xl pt-2 pb-2.5 px-4 mr-2;
+}
+
+.tag-server-x-101, .tag-serverx101 {
+    background: #ff5c7a;
+    color: #361926;
+    font-weight: bold
+}
+
+.tag-javascript, .tag-js {
+    background: #f0db4f;
+    color: black;
+}
+
+.tag-typescript {
+    background: #2775c3;
+    color: white;
+}
+
+.tag-angular {
+    background: #dc0530;
+    color: #fff;
+}
+
+.tag-firebase {
+    background: #ffcb2b;
+    color: #12181a;
+}
+
+.tag-vue {
+    background: #41b883;
+    color: #35495e;
+}
+
+.tag-rxjs {
+    @apply bg-pink-500 text-white;
+}
+
+.tag-node {
+    background: #90c53f;
+    color: #46483d;
+}
+
+.tag-cloud-functions {
+    @apply bg-blue-500 text-white;
+}
+
+.tag-flutter {
+    background: #54c5f8;
+    color: #003b6c;
+}
+
+.tag-google-maps {
+    background: #1f643f;
+    color: #f8d845;
+}
+
+.tag-android {
+    background: #a4c34a;
+    color: white;
+}
+
+.tag-stripe,
+.tag-fauna {
+    color: white;
+    background: #6675e0;
+}
+
+.tag-python {
+    color: #ffda5d;
+    background: #3879ab;
+}
+
+.tag-svelte {
+    color: #ffffff;
+    background: #ff3e00;
+}
+
+.tag-react {
+    color: #00d8ff;
+    background: #222;
+}
+
+.tag-ios {
+    color: #fff;
+    background: #000;
+}
+
+.tag-ionic {
+    background: white;
+    color: #005eff;
+}
+
+.tag-nest {
+    color: #E0234E;
+    background: #000;
+}
+
+.tag-graphql {
+    color: white;
+    background: #e10097;
+}
+
+.tag-electron {
+    color: #313244;
+    background: #adecf3;
+}
+
+.tag-css {
+    color: #313244;
+    background: #f954be;
+}
+
+.tag-github {
+    color: #fff;
+    background: #24292e;
+}
+
+.tag-deno {
+    color: #e1e9d5;
+    background: #222220;
+}
+
+.tag-docker {
+    color: #ffffff;
+    background: #2496ed;
+}
+
+.tag-nextjs {
+    color: #ffffff;
+    background: #000000;
+}
+
+.tag-rpi {
+    color: #000000;
+    font-weight: bold;
+    background: #BC1142;
+}
+
+.tag-go {
+    color: #ffffff;
+    background: #00ADD8;
+}
+
+.tag-supabase {
+    color: #3dce8c;
+}
+
+.tag-dsa {
+    background: #2ecc71;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-frontend {
+    background: #3498db;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-web-dev, .tag-web {
+    background: #cf5de3;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-3d {
+    background: #00ffff;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-programming {
+    background: #e67e22;
+    color: #000000;
+    font-weight: bold;
+    
+}
+
+.tag-gautamankoji {
+    background: #a200ff;
+    color: #ffffff;
+}
+
+.tag-graphs {
+    background: #533dce;
+    color: #ffffff;
+}
+
+.tag-vignan-challenge, .tag-vignan-challenges {
+    background: #863dce;
+    color: #ffffff;
+}
+
+.tag-ecp-practice {
+    background: #009960;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-python-practice, .tag-practice-python {
+    background: #273188;
+    color: #ffffff;
+}
+
+.tag-cp {
+    background: #b4cf17;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-algo, .tag-algorithms {
+    background: #ef9954;
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-powershell {
+    background: #2671be;
+    color: #ffffff;
+}
+
+.tag-customization {
+    background-image: linear-gradient( 90.2deg,  rgba(189,246,179,1) 2.4%, rgba(35,182,255,1) 50.5%, rgba(244,137,243,1) 100% );
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-utility {
+    background-image: linear-gradient( 102.1deg,  rgba(96,221,142,1) 8.7%, rgba(24,138,141,1) 88.1% );
+    color: #000000;
+    font-weight: bold;
+}

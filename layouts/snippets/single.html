@@ -1,0 +1,156 @@
+{{ define "header" }}
+{{ partial "progress-bar" }}
+{{ partial "topnav" }}
+{{ end }}
+
+{{ define "main" }}
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="{{ .PublishDate }}" />
+			<meta itemprop="dateModified" content="{{ .Lastmod }}" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="gautam ankoji" />
+
+
+			<header>
+
+				<!-- Video player -->
+				<!-- {{ with .Params.youtube }}
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/{{ . }}"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/{{ . }}" />
+					<meta itemprop="thumbnailUrl" content="{{ $.Params.featured_image }}" />
+					<meta itemprop="description" content="{{ $.Page.Params.description }}" />
+					<meta itemprop="uploadDate" content="{{ $.Page.Params.publishdate }}" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				{{ end }} -->
+
+				<!-- {{ with .Params.vimeo }}
+					<video-player single="true"></video-player>
+				{{ end }} -->
+
+				<div class="bg-gray8 py-5 px-3 rounded-3xl mb-5 flex justify-between mt-3">
+
+					{{ $author := .Site.GetPage (print "/authors/"  (anchorize .Params.Author)) }}
+					{{ $authorImg := (print "/authors/img/"  (anchorize .Params.Author) ".jpg") }}
+					<a class="flex items-center no-underline" itemprop="author" name="{{ .Params.author }}" href="/authors/{{ anchorize .Params.author }}/">
+						<img class="w-10 h-10 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By {{ title .Params.author }}</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">{{ .Lastmod.Format "Jan 2, 2006"}}</time>
+						</span>
+	
+					</a>
+
+					<!-- Tags -->
+					<span class="flex items-center justify-content">
+						{{ range .Params.tags }}
+							<a href="/tags/{{ . }}"><span class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300">#{{ . }}</span></a>
+						{{ end }}
+
+						{{ with .Params.github }}
+							<a class="btn btn-transparent ml-4 rounded-xl" href="{{ . }}">
+								Github
+							</a>
+						{{ end }}
+					</span>
+					
+				
+				</div>
+
+				<!-- related articles -->
+				{{ if and .Params.related (gt (len .Params.related) 0) }}
+				<div class="py-1 px-3 mb-10 flex justify-between mt-3">
+
+					<span class="flex items-center justify-content t-0">
+						<h5 class="pr-2 text-lg gradient-text-green text-gray1">Related Articles: </h5>
+						{{ range .Params.related }}
+						<a href="/articles/{{ . }}"><span
+							class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300 !rounded-sm">{{ .
+							}}</span></a>
+						{{ end }}
+						</span>
+				</div>
+				{{ else }}
+				<div class="mb-10"></div>
+				{{ end }}
+
+			</header>
+
+			<!-- Article content -->
+			<section class="prose dark:prose-invert max-w-full lesson-content ancor-blue" itemprop="articleBody">
+
+				<h1 itemprop="name headline" id="{{ anchorize .Title }}" class="gradient-text">
+					{{ .Title }}
+				</h1>
+
+
+				{{ .Content }}
+
+				<!-- recommended articles -->
+				{{ if and .Params.recommended (gt (len .Params.recommended) 0) }}
+				<div class="py-1 px-3 mb-20 flex justify-between mt-3"></div>
+				<div class="mx-auto w-[25%] h-[3px] my-12 bg-gradient-to-r from-blue-600 to-purple-500 rounded-full"></div>
+				<h4 class="text-white inline-block my-6 border-b-2 border-gray6 ">Recommended</h4>
+				<ul>
+					{{ range .Params.recommended }}
+					<li>
+						{{$hyphenated := . }}
+						<a href="/articles/{{ . }}">
+							{{(replace $hyphenated "-" " ") | upper}}
+						</a>
+					</li>
+					{{ end }}
+				</ul>
+				{{ end }}
+
+				<div class="h-12"></div>
+					
+				<!-- articles comments section -->
+				<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span class="text-base">|</span> <span>Please Reload to load comments</span>
+				<div class="m-4">
+					<script src="https://giscus.app/client.js"
+						data-repo="SERVER-X-101/SERVER-X-101"
+						data-repo-id="R_kgDOLid4UA"
+						data-category="Snippets"
+						data-category-id="DIC_kwDOLid4UM4CeW9x"
+						data-mapping="title"
+						data-strict="0"
+						data-reactions-enabled="0"
+						data-emit-metadata="0"
+						data-input-position="top"
+						data-theme="preferred_color_scheme"
+						data-lang="en"
+						crossorigin="anonymous"
+						async>
+					</script>
+				</div>	
+				
+			</section>
+
+
+		</article>
+		<!-- TOC fixed sidebar -->
+		{{ if not .Params.disable_toc }}
+		<aside class="tableOfContents">
+			{{ .TableOfContents }}
+		</aside>
+		{{ end }}
+	</div>
+</main>
+{{ end }}
+
+
+{{ define "footer" }}
+{{ partial "footer" }}
+{{ end }}

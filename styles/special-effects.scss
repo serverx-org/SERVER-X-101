@@ -1,0 +1,108 @@
+// Gradient Slide
+
+.gradient-text {
+  /* Fallback for older browsers */
+  background: hsla(258, 100%, 62%, 1);
+  /* Standard syntax */
+  background: linear-gradient(90deg,
+      hsla(258, 100%, 62%, 1) 0%,
+      hsla(183, 100%, 50%, 1) 100%);
+  /* Vendor-specific prefixes */
+  background: -moz-linear-gradient(90deg,
+      hsla(258, 100%, 62%, 1) 0%,
+      hsla(183, 100%, 50%, 1) 100%);
+  background: -webkit-linear-gradient(90deg,
+      hsla(258, 100%, 62%, 1) 0%,
+      hsla(183, 100%, 50%, 1) 100%);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7e4cf1", endColorstr="#0075ff", GradientType=1);
+
+  /* Apply gradient as text color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.gradient-text-peach {
+  /* Fallback for older browsers */
+  background: rgb(220, 40, 76);
+  /* Standard syntax */
+  background: linear-gradient(90deg,
+      rgb(220, 40, 76) 0%,
+      hsla(356, 100%, 66%, 1) 100%);
+  /* Vendor-specific prefixes */
+  background: -moz-linear-gradient(90deg,
+      rgb(220, 40, 76) 0%,
+      hsla(356, 100%, 66%, 1) 100%);
+  background: -webkit-linear-gradient(90deg,
+      rgb(220, 40, 76) 0%,
+      hsla(356, 100%, 66%, 1) 100%);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7e4cf1", endColorstr="#0075ff", GradientType=1);
+
+  /* Apply gradient as text color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-green {
+  /* Fallback for older browsers */
+  background: hsla(182, 100%, 50%, 1);
+  /* Standard syntax */
+  background: linear-gradient(90deg,
+      hsla(182, 100%, 50%, 1) 19%,
+      hsla(161, 100%, 50%, 1) 100%);
+  /* Vendor-specific prefixes */
+  background: -moz-linear-gradient(90deg,
+      hsla(182, 100%, 50%, 1) 19%,
+      hsla(161, 100%, 50%, 1) 100%);
+  background: -webkit-linear-gradient(90deg,
+      hsla(182, 100%, 50%, 1) 19%,
+      hsla(161, 100%, 50%, 1) 100%);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00F7FF", endColorstr="#00FFAE", GradientType=1);
+
+  /* Apply gradient as text color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.gradient-text-pink {
+  background: linear-gradient(to right, hsla(197, 100%, 63%, 1), hsla(294, 100%, 55%, 1));
+  background-clip: text;
+  color: rgba(0, 0, 0, 0);
+  -webkit-background-clip: text;
+}
+
+.gradient-slide {
+  background: linear-gradient(to right, hsla(197, 100%, 63%, 1), hsla(294, 100%, 55%, 1));
+  background-size: 200% 200%;
+  animation: gradiant-move 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: color .2s ease-in-out;
+}
+
+.gradient-slide-peach {
+  background: linear-gradient(to right, hsla(356, 100%, 66%, 1), rgb(120, 42, 32));
+  background-size: 200% 200%;
+  animation: gradient-move 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: color .2s ease-in-out;
+}
+
+.gradient-slide:hover {
+  color: rgba(0, 0, 0, 0);
+}
+
+.gradient-slide-peach:hover {
+  color: rgba(0, 0, 0, 0);
+}
