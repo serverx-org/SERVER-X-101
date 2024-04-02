@@ -12,7 +12,8 @@
 {{ $hoverColor := "#ff496b" }}
 
 {{/*  Code  */}}
-{{ $url := printf "%s" .Permalink | absLangURL }}
+<!-- {{ $url := "https://server.org.in" }} -->
+{{ $url := printf "https://server.org.in%s" .Page.RelPermalink }}
 {{ $textBody := print .Title "\n\n" (.Summary | truncate 200) "\n\n" $url "\n" }}
 {{ $encodedSummary := strings.TrimPrefix "=" (querify "" (.Summary | truncate 200))  }}
 <nav class="sharebuttons flex flex-col items-start justify-start">
