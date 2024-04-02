@@ -9,6 +9,15 @@ pre {
   position: relative;
 }
 
+.copy-code:hover {
+  background: #1a2328;
+}
+
+div.highlight:hover .copy-code,
+pre:hover .copy-code {
+  display: block;
+}
+
 .copy-code {
   @apply text-sm text-gray1 top-1 right-1 absolute m-1 border border-gray6 border-opacity-90 rounded-lg mb-4;
   display: none;
@@ -22,6 +31,7 @@ pre {
 .copy-code.copied {
   // display: block;
   @apply text-sm  text-green-500;
+  display: none;
   transition: width 1s ease;
 }
 
@@ -58,14 +68,6 @@ pre {
 }
 
 
-.copy-code:hover {
-  background: #1a2328;
-}
-
-div.highlight:hover .copy-code,
-pre:hover .copy-code {
-  display: block;
-}
 
 
 .file-name {

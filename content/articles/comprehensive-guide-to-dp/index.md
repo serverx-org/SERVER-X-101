@@ -1,7 +1,7 @@
 ---
 title: Comprehensive Guide to DP
 description: Dynamic Programming - A Comprehensive Guide
-author: Gautam Ankoji
+author: Geeth Sowri
 lastmod: 2024-02-27T08:36:36-07:00
 # related:
 # - ale

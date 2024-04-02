@@ -60,24 +60,24 @@
 
 
     {{ else }}
-    {{/* Layout for individual course landing page */}}
-    <header class="text-center my-12">
-        <h1 class="text-6xl mb-0 inline-block mx-auto gradient-text">{{ .Params.title }}</h1>
-        <p class="text-gray3 my-1">{{ .Params.description }}</p>
-    </header>
+        {{/* Layout for individual course landing page */}}
+        <header class="text-center my-12">
+            <h1 class="lg:text-6xl mb-0 inline-block mx-auto gradient-text sm:text-2xl">{{ .Params.title }}</h1>
+            <p class="text-gray3 my-1">{{ .Params.description }}</p>
+        </header>
 
-    <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+        <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
 
         <!-- {{ if .Params.vimeo }}
-            <div class="max-w-3xl mx-auto">
-                <video-player free="true" single="true"></video-player>
-            </div>
-        {{ end }} -->
-        
+                <div class="max-w-3xl mx-auto">
+                    <video-player free="true" single="true"></video-player>
+                </div>
+            {{ end }} -->
+
         <div class="flex flex-col sm:flex-row justify-content">
-            <div class="max-w-5xl mx-auto ancor-blue sm:w-3/4 mb-4 sm:mb-0 order-1 sm:order-2 pb-4">
-                
+            <div class="max-w-5xl mx-auto ancor-blue sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-2 sm:order-2 pb-4">
+
                 {{ $author := .Site.GetPage (print "/authors/" (anchorize .Params.Author)) }}
                 {{ $authorImg := (print "/authors/img/" (anchorize .Params.Author) ".jpg") }}
                 <div class="flex items-center no-underline justify-center" itemprop="author" name="{{ .Params.author }}">
@@ -95,27 +95,27 @@
                 {{ .Content }}
 
                 
-				
+                
+
             </div>
 
-            
-            
             {{ if gt (len .Pages) 0 }}
-            <div class="relative w-full sm:w-1/4 order-2 sm:order-1 items-center mx-auto">
+            <div class="relative w-full sm:w-1/4 order-2 md:order-1 sm:order-1 items-center mx-auto">
                 <div class="flex flex-col justify-center">
                     <div class="text-center">
                         <h1 class="text-3xl text-peach inline-block border-b border-peach1">Problems</h1>
                         <!-- <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div> -->
                     </div>
-                    <ul class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar" id="sidebar">
+                    <ul class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar"
+                        id="sidebar">
                         {{ range $index, $page := .Pages }}
                         <li class="flex flex-col">
                             <a class="no-underline" href="{{ .RelPermalink }}">
                                 <!-- <span
-                                    class="absolute -top-2 -left-5 font-display leading-6 text-center text-3xl w-10 rounded-full p-2">
-                                    {{/* {{ printf "%02d" ( add $index 1 )}} */}}
-                                    {{ $page.Params.emoji }}
-                                </span> -->
+                                        class="absolute -top-2 -left-5 font-display leading-6 text-center text-3xl w-10 rounded-full p-2">
+                                        {{/* {{ printf "%02d" ( add $index 1 )}} */}}
+                                        {{ $page.Params.emoji }}
+                                    </span> -->
                                 <h6 class="text-gray2 text-md hover:text-peach">
                                     <span class="gradient-text mb-0">{{ printf "%02d" ( add $index 1 )}}</span>
                                     {{ $page.Title }}
@@ -127,36 +127,36 @@
                     </ul>
                 </div>
                 {{ end }}
-            </div>
-            {{ end }}
 
+                
+
+            </div>
             
+            {{ end }}
             
         </div>
-        
         <div class="h-12"></div>
-                <!-- articles comments section -->
-				<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span class="text-base">|</span> <span>Please Reload to load comments</span>
-				<div class="md:mr-4 lg:mr-4">
-					<script src="https://giscus.app/client.js"
-						data-repo="SERVER-X-101/SERVER-X-101"
-						data-repo-id="R_kgDOLoz2-A"
-						data-category="Contents"
-						data-category-id="DIC_kwDOLoz2-M4CeaGh"
-						data-mapping="title"
-						data-strict="0"
-						data-reactions-enabled="0"
-						data-emit-metadata="0"
-						data-input-position="top"
-						data-theme="preferred_color_scheme"
-						data-lang="en"
-						crossorigin="anonymous"
-						async>
-					</script>
-                    
-				</div>	
-        
-    <!-- </div> -->
+        <!-- articles comments section -->
+        <h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span class="text-base">|</span> <span>Please Reload to load comments</span>
+        <div class="md:mr-4 lg:mr-4">
+            <script src="https://giscus.app/client.js"
+                data-repo="SERVER-X-101/SERVER-X-101"
+                data-repo-id="R_kgDOLoz2-A"
+                data-category="Contents"
+                data-category-id="DIC_kwDOLoz2-M4CeaGh"
+                data-mapping="title"
+                data-strict="0"
+                data-reactions-enabled="0"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+            </script>
+            
+        </div>	
+        <!-- </div> -->
 
 </main>
 {{ end }}
