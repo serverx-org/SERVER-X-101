@@ -12,8 +12,7 @@
     "build": "vite build && hugo",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "algolia": "atomic-algolia",
-    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting"
+    "deploy": "npm run build"
   },
   "keywords": [],
   "author": "Gautam Ankoji",
