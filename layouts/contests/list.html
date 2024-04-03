@@ -19,7 +19,7 @@
     <ul class="grid-list justify-items-center pl-0">
         {{ range where .Pages.ByLastmod.Reverse "Params.contests" true }}
         <li class="list-none p-0">
-            {{ $img := (print .RelPermalink "img/featured.png") }}
+            {{ $img := (print .RelPermalink "img/featured.webp") }}
             {{ partial "card" (dict "context" . "img" $img) }}
         </li>
         {{ end }}

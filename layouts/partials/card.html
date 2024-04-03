@@ -5,7 +5,7 @@
     <a href="{{ .context.RelPermalink }}" class="no-underline" aria-label="{{ .context.Title }}">
         
         {{/* if img is defined, use it, otherwise default */}}
-        {{ $img := cond (isset . "img") .img (print .context.RelPermalink "img/featured.png") }}
+        {{ $img := cond (isset . "img") .img (print .context.RelPermalink "img/featured.webp") }}
         {{/* make sure file exists */}}
         {{ $img := cond (fileExists $img) $img "/img/default-cover.webp" }}
         
