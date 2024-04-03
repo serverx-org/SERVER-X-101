@@ -9,10 +9,7 @@ type: blank
 
 SERVER-X-101 is committed to protecting your privacy. This Privacy Policy explains the methods and reasons we collect, use, disclose, transfer, and store your information. If you have any questions about the contents of this policy, don’t hesitate to contact us.
 
-If you do not consent to the collection and use of information from or about you in accordance with this Privacy Policy, then you are not permitted to use SERVER-X-101 or any services provided on https://server-x-101.github.io.
-
-### Applicable Law
-SERVER-X-101 is headquartered in the United States of America in the state of Nevada. By viewing any content or otherwise using the services offered by SERVER-X-101, you consent to the transfer of information to the United States of America to the extent applicable, and the collection, storage, and processing of information under Nevada, USA law.
+If you do not consent to the collection and use of information from or about you in accordance with this Privacy Policy, then you are not permitted to use SERVER-X-101 or any services provided on https://serverx.org.in.
 
 ### Information We Collect
 Information you Submit: We store information you provide on this site via forms, surveys, or any other interactive content. This information commonly includes, but is not limited to, name, mailing address, email address, and uploaded files.
@@ -27,12 +24,9 @@ This site contains links to other websites not owned by SERVER-X-101. In general
 ### Children and COPPA
 SERVER-X-101 is committed to complying with the Children’s Online Privacy Protection Act (COPPA). We do not use our services to intentionally solicit data from or market to children under the age of 13. We encourage parents and guardians to report any suspicions that a child has provided us with information without their consent. We will take reasonable action to remove this information.
 
-### Your Choices
-**Opt-Out of Third Party Advertisement Cookies**: You may opt out of a third-party vendor's use of cookies for interest based advertising by visiting https://aboutads.info.
-
-**Do Not Track Browser settings**: If you enable Do Not Track settings in the browser you are using, SERVER-X-101 will not use information about websites you visit, other than our site. Learn more about Do Not Track by visiting https://allaboutdnt.com.
-
 **Email Communication Opt-Out**: If you receive promotional emails from SERVER-X-101, you can unsubscribe by clicking the bottom Unsubscribe or Opt-Out link at the bottom of every email.
 
 ### Contact Us
-At SERVER-X-101, we believe our talented customer service staff will be able to resolve any issues you may have using the our services. If you would like additional information about this privacy policy, please visit our homepage at https://server-x-101.github.io.
+At SERVER-X-101, we believe our talented customer service staff will be able to resolve any issues you may have using the our services.</br>email us: [contact.serverx@gmail.com](mailto:contact.serverx@gmail.com)
+
+If you would like additional information about this privacy policy, please visit our homepage at https://server-x-101.github.io.
