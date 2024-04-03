@@ -4,6 +4,68 @@
 <h3> <b>SERVER X 101</b> </h3>
 </div>
 
+## To work on this repository install Hugo
+
+**In Windows:**
+
+**Chocolatey**  
+[Chocolatey](https://chocolatey.org) is a free and open-source package manager for Windows. To install the extended edition of Hugo:
+
+```bash
+choco install hugo-extended
+```
+
+**Scoop**  
+[Scoop](https://scoop.sh) is a free and open-source package manager for Windows. To install the extended edition of Hugo:
+
+```bash
+scoop install hugo-extended
+```
+
+**Winget**  
+[Winget](https://learn.microsoft.com/en-us/windows/package-manager/) is Microsoft’s official free and open-source package manager for Windows. To install the extended edition of Hugo:
+
+```bash
+winget install Hugo.Hugo.Extended
+```
+
+**In Linux:**  
+To install the extended edition of Hugo:
+
+```bash
+sudo snap install hugo
+```
+
+To enable or revoke access to removable media:
+
+```bash
+sudo snap connect hugo:removable-media
+sudo snap disconnect hugo:removable-media
+```
+
+To enable or revoke access to SSH keys:
+
+```bash
+sudo snap connect hugo:ssh-keys
+sudo snap disconnect hugo:ssh-keys
+```
+
+**In macOS:**
+
+**Homebrew**  
+[Homebrew](https://brew.sh) is a free and open-source package manager for macOS and Linux. To install the extended edition of Hugo:
+
+```bash
+brew install hugo
+```
+
+**MacPorts**  
+[MacPorts](https://www.macports.org) is a free and open-source package manager for macOS. To install the extended edition of Hugo:
+
+```bash
+sudo port install hugo
+```
+
 ## Website Development Instructions
 
 To contribute to the development of our website, follow these steps:
@@ -22,6 +84,7 @@ To contribute to the development of our website, follow these steps:
    ```
    npm start
    ```
+
 
 4. **Make Changes:** 
    Once the server is running, make your desired changes to the codebase.
