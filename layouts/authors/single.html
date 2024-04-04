@@ -41,7 +41,7 @@
     </div>
   </section>
   <section>
-    <h1 class="text-left text-5xl mb-1 text-gray1" style="text-shadow: 0px 4px #692dca;">Articles | Content</h1>
+    <h1 class="text-left lg:text-4xl text-2xl mb-6  text-gray1" style="text-shadow: 0px 4px #692dca;">Articles | Content</h1>
     <div class="grid-list justify-items-center pl-0">
       {{ range first 4 (where .Site.Pages "Params.author" .Title) }}
       {{ $img := (print .RelPermalink "img/featured.png") }}
