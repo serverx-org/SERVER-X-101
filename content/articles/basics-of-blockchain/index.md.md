@@ -1,5 +1,5 @@
 ---
-title: Blockchain 101
+title: Basics of Blockchain
 description: Understanding the Basics of Blockchain Technology
 author: Geeth Sowri
 lastmod: 2024-02-27T08:36:36-07:00
