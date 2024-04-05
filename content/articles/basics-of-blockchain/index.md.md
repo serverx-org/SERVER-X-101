@@ -34,13 +34,15 @@ Individual computers or devices that participate in the blockchain network by ma
 >
 ### Consensus Mechanism
 
-A process used to achieve agreement on the state of the blockchain. Popular mechanisms include Proof of Work (used by Bitcoin) and Proof of Stake (used by Ethereum 2.0).
-> This is like a big team meeting where everyone who has a copy of the notebook agrees on what should be added or changed. It helps keep the notebook consistent and trustworthy.
->
+A consensus mechanism is a process utilized to reach an agreement on the state of the blockchain. Popular mechanisms include Proof of Work (used by Bitcoin) and Proof of Stake (used by Ethereum 2.0).
+
+> It's akin to a large team meeting where everyone possessing a copy of the notebook concurs on what additions or alterations should be made. This process ensures the consistency and trustworthiness of the notebook.
+
 ### Smart Contracts
 
-A process used to achieve agreement on the state of the blockchain. Popular mechanisms include Proof of Work (used by Bitcoin) and Proof of Stake (used by Ethereum 2.0).
-> Imagine writing down a set of rules in the notebook, and when certain conditions are met, those rules automatically come to life. It's like having a magic agreement that executes itself.
+Smart contracts are automated protocols that facilitate agreement on the blockchain's state. Popular mechanisms include Proof of Work (used by Bitcoin) and Proof of Stake (used by Ethereum 2.0).
+
+> Think of it as writing a set of rules in the notebook; when specific conditions are met, these rules autonomously come into effect. It's akin to having a magical agreement that self-executes.
 >
 ### Public and Private Blockchains
 
