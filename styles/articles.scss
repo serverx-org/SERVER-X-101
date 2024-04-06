@@ -20,6 +20,28 @@
   }
 }
 
+.chapterSidebar {
+  @apply md:block sticky w-96 top-8 ml-4 mb-auto px-3 pb-2 pt-0;
+
+  nav {
+    ul {
+      li {
+        ul {
+          @apply ml-1;
+
+          a {
+            @apply text-gray4 text-sm font-normal hover:text-peach1 duration-300;
+          }
+        }
+
+        a {
+          @apply text-gray3 hover:text-gray2 duration-300;
+        }
+      }
+    }
+  }
+}
+
 .lesson-content {
   h2 {
     @apply text-white inline-block my-6 border-b-2 border-dashed border-gray6 ;

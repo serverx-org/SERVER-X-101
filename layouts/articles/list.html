@@ -3,7 +3,8 @@
 {{ end }}
 {{ define "main" }}
 <main class="prose dark:prose-invert container">
-
+  {{ if eq .CurrentSection.RelPermalink "/articles/" }}
+  {{/* Layout for ALL articles */}}
   <header class="text-left mb-8 mt-20 pl-4 inset-0">
     <h1 class="text-5xl mb-1 text-gray1" style="text-shadow: 0px 4px #692dca;">Articles</h1>
 
@@ -12,10 +13,10 @@
 
   <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
-  
+
   <ul class="grid-list justify-items-center pl-0 ">
     {{ $paginator := .Paginate (where .Pages "Type" "articles") 12 }}
-    
+
     {{ range $paginator.Pages }}
     {{ if not .Params.hidden }}
     <li class="list-none p-0">
@@ -24,11 +25,148 @@
     {{ end }}
     {{ end }}
   </ul>
-  
+
   <div class="h-6"></div>
   <div class="text-sm sm:text-base md:text-lg lg:text-lg">
     {{ template "_internal/pagination.html" . }}
   </div>
+  {{ else }}
+      {{/* Layout for special articles landing page */}}
+        
+
+        <div class="flex flex-col sm:flex-row justify-content">
+            <article class="sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-1 sm:order-1 pb-4">
+
+              <header>
+                <div class="bg-gray8 rounded-3xl flex justify-between h-20">
+        
+                  {{ $author := .Site.GetPage (print "/authors/" (anchorize .Params.Author)) }}
+                  {{ $authorImg := (print "/authors/img/" (anchorize .Params.Author) ".jpg") }}
+                  <a class="flex items-center no-underline pl-4" itemprop="author" name="{{ .Params.author }}"
+                    href="/authors/{{ anchorize .Params.author }}/">
+                    <img class="w-10 h-10 rounded-full block" src="{{ $authorImg }}"
+                      alt="{{ $author.Title }} avatar">
+                    <span class="flex flex-col ml-2">
+                      <span class="no-underline"> {{ title .Params.author }}</span>
+                      <span class="text-xs text-gray4">
+                        • <time itemprop="dateModified">{{ .Lastmod.Format "Jan 2, 2006"}}</time>&nbsp;
+                        •  {{ .ReadingTime }} min{{ if (ne .ReadingTime 1) }}s{{ end }}
+                      </span>
+                    </span>
+                  </a>
+        
+                  <!-- Tags -->
+                  <span class="flex items-center justify-content ">
+                    {{ range .Params.tags }}
+                    <a href="/tags/{{ . }}"><span
+                        class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300 ">#{{ .
+                        }}</span></a>
+                    {{ end }}
+        
+                    {{ with .Params.github }}
+                    <a class="btn btn-transparent ml-4" href="{{ . }}">
+                      Github
+                    </a>
+                    {{ end }}
+                  </span>
+        
+                </div>
+        
+                <!-- related articles -->
+                {{ if and .Params.related (gt (len .Params.related) 0) }}
+                <div class="py-1 px-3 mb-5 flex justify-between mt-3">
+        
+                  <span class="flex items-center justify-content t-0">
+                    <h5 class="pr-2 text-lg gradient-text-green text-gray1">Related Articles: </h5>
+                    {{ range .Params.related }}
+                    <a href="/articles/{{ . }}"><span
+                      class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300">{{ .
+                      }}</span></a>
+                    {{ end }}
+                    </span>
+                </div>
+                {{ else }}
+                <!-- <div class="mb-10"></div> -->
+                {{ end }}
+                
+                <!-- share links -->
+                <div class="mb-10"></div>
+                {{ partial "share-buttons.html" . }}
+                <div class="mb-10"></div>
+                    
+              </header>
+        
+        
+        
+              <!-- Article content -->
+              <section class="prose dark:prose-invert max-w-full lesson-content ancor-blue" itemprop="articleBody">
+        
+                <h1 itemprop="name headline" id="{{ anchorize .Title }}" class="gradient-text">
+                  {{ .Title }}
+                </h1>
+        
+                
+                  {{ .Content }}
+
+                  <div class="h-12"></div>
+                  <!-- articles comments section -->
+                  <h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span class="text-base">|</span> <span>Please Reload to load comments</span>
+                  <div class="md:mr-4 lg:mr-4">
+                      <script src="https://giscus.app/client.js"
+                          data-repo="SERVER-X-101/SERVER-X-101"
+                          data-repo-id="R_kgDOLoz2-A"
+                          data-category="Articles"
+                          data-category-id="DIC_kwDOLoz2-M4CeaGh"
+                          data-mapping="pathname"
+                          data-strict="0"
+                          data-reactions-enabled="0"
+                          data-emit-metadata="0"
+                          data-input-position="top"
+                          data-theme="preferred_color_scheme"
+                          data-lang="en"
+                          crossorigin="anonymous"
+                          async>
+                      </script>
+                      
+                  </div>	
+        
+              </section>
+                
+
+            </article>  
+
+            {{ if gt (len .Pages) 0 }}
+            <div class="chapterSidebar relative w-full sm:w-[20%] order-2 md:order-2 sm:order-2 items-center mx-auto">
+                <div class="flex flex-col justify-center">
+                    <div class="text-center h-6">
+                        <h5 class=" text-peach text-md inline-block border-b border-peach1">Chapters</h5>
+                        <!-- <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div> -->
+                    </div>
+                    <ul class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar"
+                        id="sidebar">
+                        {{ range $index, $page := .Pages }}
+                        <li class="flex flex-col">
+                            <a class="no-underline h-4" href="{{ .RelPermalink }}">
+                                <span class="text-gray3 bold uppercase text-md line-clamp-1 hover:text-peach">
+                                    <!-- <span class="gradient-text mb-0 font-extrabold">{{ printf "%02d" ( add $index 1 )}}</span> -->
+                                    {{ $page.Title }}
+                                </span>
+                                <!-- <p class="text-gray3">{{ $page.Description }}</p> -->
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+
+                
+
+            </div>
+            
+            {{ end }}
+            
+        </div>
+        
 
 </main>
 {{ end }}

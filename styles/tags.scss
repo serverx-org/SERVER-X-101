@@ -174,11 +174,24 @@
     font-weight: bold;
 }
 
+// .tag-programming {
+//     background: #e67e22;
+//     color: #000000;
+//     font-weight: bold;
+    
+// }
+
+
 .tag-programming {
-    background: #e67e22;
+    background-image: linear-gradient( 102.1deg,  #f74c06 8.7%, #f9bc2c 88.1% );
     color: #000000;
     font-weight: bold;
-    
+}
+
+.tag-cp, .tag-competitive-programming {
+    background-image: linear-gradient( 102.1deg,  #f2e901 8.7%, #51c26f 88.1% );
+    color: #000000;
+    font-weight: bold;
 }
 
 .tag-gautamankoji {
@@ -207,11 +220,11 @@
     color: #ffffff;
 }
 
-.tag-cp {
-    background: #b4cf17;
-    color: #000000;
-    font-weight: bold;
-}
+// .tag-cp {
+//     background: #b4cf17;
+//     color: #000000;
+//     font-weight: bold;
+// }
 
 .tag-algo, .tag-algorithms {
     background: #ef9954;
@@ -235,3 +248,28 @@
     color: #000000;
     font-weight: bold;
 }
+
+.tag-cybersecurity, .tag-cyber-security {
+    background-image: linear-gradient( 102.1deg,  #0061ff 8.7%, #60efff 88.1% );
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-datascience, .tag-data-science {
+    background-image: linear-gradient( 102.1deg,  #ff930f 8.7%, #fff95b 88.1% );
+    color: #000000;
+    font-weight: bold;
+}
+
+.tag-blockchain {
+    background-image: linear-gradient( 102.1deg,  #8711c1 8.7%, #2472fc 88.1% );
+    color: #ffffff;
+    // font-weight: bold;
+}
+
+.tag-introduction, .tag-intro, .tag-beginner {
+    background-image: linear-gradient( 102.1deg,  #f8dadc 0%, #b6edc8 50%, #eeacdc 100% );
+    color: #000000;
+    font-weight: bold;
+}
+

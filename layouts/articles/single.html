@@ -64,12 +64,12 @@
 				<div class="mb-10"></div>
 				{{ end }}
 				
-				<!-- share links -->
-				{{ partial "share-buttons.html" . }}
-				<div class="mb-10"></div>
-						
+				
 			</header>
-
+			
+			<!-- share links -->
+			{{ partial "share-buttons.html" . }}
+			<div class="mb-10"></div>
 
 
 			<!-- Article content -->
@@ -83,7 +83,7 @@
 				{{ .Content }}
 
 				
-				
+				<!-- random recommended articles -->
 				<!-- {{ $currentArticle := . }}
 				{{ $articles := where (where $.Site.Pages ".Kind" "eq" "page") ".Title" "!=" $currentArticle.Title }}
 				{{ $veryRelevantArticles := slice }}

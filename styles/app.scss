@@ -21,8 +21,6 @@
 @import './ui.scss';
 
 
-
-
 .selector {
     user-drag: none;
     -webkit-user-drag: none;
@@ -107,6 +105,7 @@ h6 {
 }
 
 
+
 .ancor-blue {
     p a {
       @apply text-blue-500 no-underline hover:text-peach1 duration-200;
@@ -116,6 +115,8 @@ h6 {
       @apply text-blue-500 no-underline hover:text-peach1 duration-200;
     }
   }
+
+  
 
 svg { 
     width: auto;
@@ -160,4 +161,3 @@ video-player {
     font-weight: medium;
     text-transform: uppercase;
 }
-
