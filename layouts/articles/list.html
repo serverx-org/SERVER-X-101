@@ -108,6 +108,23 @@
                 
                   {{ .Content }}
 
+                  <!-- recommended articles -->
+                  {{ if and .Params.recommended (gt (len .Params.recommended) 0) }}
+                  <div class="py-1 px-3 mb-20 flex justify-between mt-3"></div>
+                  <div class="mx-auto w-[25%] h-[3px] my-12 bg-gradient-to-r from-blue-600 to-purple-500 rounded-full"></div>
+                  <h4 class="text-white inline-block my-6 border-b-2 border-gray6 ">Recommended</h4>
+                  <ul>
+                    {{ range .Params.recommended }}
+                    <li>
+                      {{$hyphenated := . }}
+                      <a href="/articles/{{ . }}">
+                        {{(replace $hyphenated "-" " ") | upper}}
+                      </a>
+                    </li>
+                    {{ end }}
+                  </ul>
+                  {{ end }}
+
                   <div class="h-12"></div>
                   <!-- articles comments section -->
                   <h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span class="text-base">|</span> <span>Please Reload to load comments</span>

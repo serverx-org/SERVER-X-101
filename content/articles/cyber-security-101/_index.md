@@ -4,6 +4,20 @@ description: Protecting internet-connected systems from malicious attacks
 author: Gedela Vijaya Laxmi
 type: articles
 lastmod: 2024-04-07T08:36:36-07:00
+recommended:
+  - cyber-security-101/understand-common-hacking-tools
+  - cyber-security-101/understand-common-exploit-frameworks
+  - cyber-security-101/understand-concept-of-defense-in-depth
+  - cyber-security-101/basics-and-concepts-of-threat-hunting
+  - cyber-security-101/basics-of-reverse-engineering
+  - cyber-security-101/kali-linux
+  - cyber-security-101/parrot-os
+  - cyber-security-101/phishing
+  - cyber-security-101/shoulder-surfing
+  - cyber-security-101/dumpster-diving
+  - cyber-security-101/tailgating
+  - cyber-security-101/brute-force
+  - cyber-security-101/social-engineering
 tags:
   - cyber-security
   - introduction
@@ -64,28 +78,24 @@ Cybersecurity aims to achieve at least one of these three goals:
 
 ## Tools
 
-|                                           Tool Name                                           | Uses                                       |
-| :-------------------------------------------------------------------------------------------: | :-----------------------------------------: |
+|                                           Tool Name                                           |                    Uses                    |
+| :-------------------------------------------------------------------------------------------: | :----------------------------------------: |
 | [Metasploit](https://www.youtube.com/watch?v=QynUOJanNqo&pp=ygUVbWV0YXNwbG9pdCBrYWxpIGxpbnV4) | Identify, exploit, and fix vulnerabilities |
 
 ## Capture the Flag
 
-|  Website   | Links                                             |
-| :--------: | :------------------------------------------------: |
+|  Website   |                       Links                       |
+| :--------: | :-----------------------------------------------: |
 | HackTheBox | [https://hackthebox](https://www.hackthebox.com/) |
 
 ## Free Resources/Sources
 
-<table>
-  <tr>
-    <th>Website</th>
-    <th>Links</th>
-  </tr>
-  <tr>
-    <td>EC Council</td>
-    <td><a href="">https://www.mygreatlearning.com/</a></td>
-  </tr>
-  <!-- Add other free resources/sources in the same format -->
-</table>
+|  Website   |                                Links                                |
+| :--------: | :-----------------------------------------------------------------: |
+| EC Council | [https://www.mygreatlearning.com](https://www.mygreatlearning.com/) |
 
-"NEVER GIVE UP FOR ANYTHING"
+</br>
+
+<div align="center" class="highlight">
+  <pre class="chroma"><span class="text-gray3">"NEVER GIVE UP FOR ANYTHING!"</span></pre>
+</div>
