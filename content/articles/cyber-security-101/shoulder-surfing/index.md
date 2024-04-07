@@ -12,7 +12,7 @@ tags:
 
 Shoulder surfing is a type of social engineering attack where an attacker observes someone’s screen, keyboard, or any other device to gain unauthorized access to sensitive information. It is typically performed by secretly watching the victim during data entry, either directly or indirectly through reflections, smartphones, or other recording equipment.
 
-## **How Shoulder Surfing Occurs
+## How Shoulder Surfing Occurs
 
 **Direct observation:** An attacker stands close to the target and observes their activities, such as typing passwords, entering credit card details, or accessing confidential data.
 

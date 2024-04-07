@@ -2,9 +2,10 @@
 title: Cybersecurity 101
 description: Protecting internet-connected systems from malicious attacks
 author: Gedela Vijaya Laxmi
+type: articles
 lastmod: 2024-04-07T08:36:36-07:00
 tags:
-  - cybersecurity
+  - cyber-security
   - introduction
 ---
 
@@ -37,7 +38,7 @@ Cybersecurity aims to achieve at least one of these three goals:
 ## Installation of Operating Systems
 
 - [Kali Linux](kali-linux)
-- [Parrot Security](parrotOS)
+- [Parrot Security](parrot-os)
 
 ## Basic Cryptography Skills
 
@@ -49,13 +50,13 @@ Cybersecurity aims to achieve at least one of these three goals:
 
 ## Attack Types
 
-- [Phishing](Phishing)
-- [Shoulder Surfing](Shoulder-Surfing)
-- [Dumpster Diving](Dumpster-Diving)
-- [Tailgating](Tailgating)
-- [Brute Force](Brute-Force)
-- [Reconnaissance](Reconnaissance)
-- [Social Engineering](Social-Engineering)
+- [Phishing](phishing)
+- [Shoulder Surfing](shoulder-surfing)
+- [Dumpster Diving](dumpster-diving)
+- [Tailgating](tailgating)
+- [Brute Force](brute-force)
+- [Reconnaissance](reconnaissance)
+- [Social Engineering](social-engineering)
 
 ## Networking
 
@@ -63,31 +64,15 @@ Cybersecurity aims to achieve at least one of these three goals:
 
 ## Tools
 
-<table>
-  <tr>
-    <th>Tool Name</th>
-    <th>Uses</th>
-  </tr>
-  <tr>
-    <td><a href="https://www.youtube.com/watch?v=QynUOJanNqo&pp=ygUVbWV0YXNwbG9pdCBrYWxpIGxpbnV4">Metasploit</a></td>
-    <td>Identify, exploit, and fix vulnerabilities</td>
-  </tr>
-  <!-- Add other tools in the same format -->
-</table>
+|                                           Tool Name                                           | Uses                                       |
+| :-------------------------------------------------------------------------------------------: | :-----------------------------------------: |
+| [Metasploit](https://www.youtube.com/watch?v=QynUOJanNqo&pp=ygUVbWV0YXNwbG9pdCBrYWxpIGxpbnV4) | Identify, exploit, and fix vulnerabilities |
 
 ## Capture the Flag
 
-<table>
-  <tr>
-    <th>Website</th>
-    <th>Links</th>
-  </tr>
-  <tr>
-    <td>Hack the Box</td>
-    <td><a href="https://www.hackthebox.com/">https://HacktheBox</a></td>
-  </tr>
-  <!-- Add other CTF platforms in the same format -->
-</table>
+|  Website   | Links                                             |
+| :--------: | :------------------------------------------------: |
+| HackTheBox | [https://hackthebox](https://www.hackthebox.com/) |
 
 ## Free Resources/Sources
 

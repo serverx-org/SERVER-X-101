@@ -1,5 +1,5 @@
 ---
-title: 10 Tailatoring
+title: 10 Tailgating
 description: Attacker chooses a target building, office, or data center which requires secure access.
 author: Gedela Vijaya Laxmi
 lastmod: 2024-04-07T08:36:36-07:00
