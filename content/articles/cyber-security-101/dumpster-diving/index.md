@@ -3,6 +3,20 @@ title: 09 Dumpster Diving
 description: Dumpster diving is a low-tech but potentially effective method used by attackers to gather sensitive and valuable information by physically searching through an organization’s trash.
 author: Gedela Vijaya Laxmi
 lastmod: 2024-04-07T08:36:36-07:00
+recommended:
+  - cyber-security-101/understand-common-hacking-tools
+  - cyber-security-101/understand-common-exploit-frameworks
+  - cyber-security-101/understand-concept-of-defense-in-depth
+  - cyber-security-101/basics-and-concepts-of-threat-hunting
+  - cyber-security-101/basics-of-reverse-engineering
+  - cyber-security-101/kali-linux
+  - cyber-security-101/parrot-os
+  - cyber-security-101/phishing
+  - cyber-security-101/shoulder-surfing
+  - cyber-security-101/dumpster-diving
+  - cyber-security-101/tailgating
+  - cyber-security-101/brute-force
+  - cyber-security-101/social-engineering
 tags:
   - cyber-security
 ---
