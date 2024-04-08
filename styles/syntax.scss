@@ -81,7 +81,7 @@ pre:hover .copy-code {
   .highlight {
     pre {
       /* @apply whitespace-pre-wrap; */
-      @apply rounded-tr-md rounded-b-md;
+      @apply rounded-tr-md rounded-b-md pt-8;
       position: relative; /* Added */
       
       span.cl {
