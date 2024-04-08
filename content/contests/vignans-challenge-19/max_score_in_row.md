@@ -1,7 +1,9 @@
 ---
 title: Max Score in Roe
 description: Problem 5
-reading_time: 4 min
+lastmod: 2024-02-25
+contest: Vignan Challenge 19
+author: Gautam Ankoji
 ---
 
 ##### Problem Statement

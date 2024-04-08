@@ -3,6 +3,7 @@ title: Data and Data Science
 description: How to start Data Science Journey
 author: Gowrav Sai Veeramallu
 lastmod: 2024-03-31
+
 github: https://github.com/SERVER-X-101/SERVER-X-ARCHIVES/edit/main/Gowrav/articles/data-science-101/index.md
 tags:
   - data-science

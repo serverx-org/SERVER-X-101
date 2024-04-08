@@ -1,0 +1,17 @@
+{{ $img := print .Permalink "img/featured.png" }}
+
+{{ if not (fileExists (print .RelPermalink "img/featured.png")) }}
+{{ $img = "/img/default-cover.png" }}
+{{ end }}
+
+<div class="mx-auto pb-4">
+    <div class="bg-gray-200 overflow-hidden shadow-lg">
+        <img class="w-full h-auto text-center" src="{{ $img | absURL }}" alt="Featured Image">
+        <figcaption class="bottom-0 left-0 right-0 bg-transparent text-center text-xs text-gray4 py-1">
+            <!-- Customizing your shell prompt can enhance your development environment.
+            <a href="https://github.com/gautamankoji" target="_blank" rel="noopener noreferrer" class="">
+                @<span class="font-semibold underline">gautamankoji</span></a> -->
+                {{ .Params.figcaption | default .Description }}
+        </figcaption>
+    </div>
+</div>

@@ -6,14 +6,24 @@
 
 {{ $description := .Description | default .Summary }}
 
-<title>{{ .Page.Title }}</title>
+{{ $type := .Type | default "articles" }}
+
+<title>
+    {{ if or (eq .Type "articles") (eq .Type "snippets") }}
+        {{ .Page.Title }} {{ with .Params.author }} | by {{ . }}{{ else }}{{ " " }}{{ end }} {{ with .Lastmod.Format "Jan 2, 2006"}} | {{ . }}{{ else }}{{ " " }}{{ end }} | SERVER X 101
+    {{ else if eq .Type "contests" }}
+        {{ .Page.Title }} {{ with .Params.contest }} | {{ . }}{{ else }}{{ " " }}{{ end }} | by {{ .Params.author }} {{ with .Lastmod.Format "Jan 2, 2006"}} | {{ . }}{{ else }}{{ " " }}{{ end }} | SERVER X 101
+    {{ else }}
+        {{ .Page.Title }}
+    {{ end }}
+</title>
 <link rel="canonical" href="{{ .Permalink | absURL }}" />
 <meta name="description" content="{{ $description }}">
 <meta name="image" content="{{ $img | absURL }}">
 
 
-<meta property="og:title" content="{{ .Title }}" />
-<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ .Title }} | {{ .Params.author }}" />
+<meta property="og:type" content="{{ $type }}" />
 <meta property="og:url" content="{{ .Permalink | absURL }}" />
 <meta property="og:image" content="{{ $img | absURL }}" />
 <meta property="og:description" content="{{ $description }}" />

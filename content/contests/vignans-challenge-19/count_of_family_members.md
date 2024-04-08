@@ -2,8 +2,9 @@
 title: Count of Family Members 
 description: Problem 1
 topic_start: Tech Mahindra Coding Round
-reading_time: 4 min
-
+lastmod: 2024-02-25
+contest: Vignan Challenge 19
+author: Gautam Ankoji
 ---
 
 ##### Problem Statement

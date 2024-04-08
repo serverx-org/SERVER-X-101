@@ -11,7 +11,7 @@
   <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
   
   {{ range .Pages }}
-  <article>
+  <article itemscope itemtype="http://schema.org/author">
         <a class="mb-6 no-underline" href="{{ .RelPermalink }}">
         <h2 class="gradient-text inline-block mb-0">{{ .Title }}</h2>
       </a>  

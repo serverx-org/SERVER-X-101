@@ -1,6 +1,7 @@
 ---
 title: Sum of the Array
-reading_time: 2 min
+lastmod: 2024-03-10
+contest: Vignan Challenge 20
 author: Gautam Ankoji
 ---
 

@@ -2,8 +2,8 @@
 {{ partial "topnav" }}
 {{ end }}
 {{ define "main" }}
-<main class="prose dark:prose-invert container">
-  {{ if eq .CurrentSection.RelPermalink "/articles/" }}
+{{ if eq .CurrentSection.RelPermalink "/articles/" }}
+<main class="container">
   {{/* Layout for ALL articles */}}
   <header class="text-left mb-8 mt-20 pl-4 inset-0">
     <h1 class="text-5xl mb-1 text-gray1" style="text-shadow: 0px 4px #692dca;">Articles</h1>
@@ -30,12 +30,19 @@
   <div class="text-sm sm:text-base md:text-lg lg:text-lg">
     {{ template "_internal/pagination.html" . }}
   </div>
+</main>
   {{ else }}
       {{/* Layout for special articles landing page */}}
         
-
+      <main class="container">
         <div class="flex flex-col sm:flex-row justify-content">
-            <article class="sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-1 sm:order-1 pb-4">
+            <article itemscope itemtype="http://schema.org/Article" class="sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-1 sm:order-1 pb-4">
+              <meta itemprop="datePublished" content="{{ .PublishDate }}" />
+              <meta itemprop="dateModified" content="{{ .Lastmod }}" />
+              <meta itemprop="image" content="img/featured.png" />
+              <meta itemprop="publisher" content="gautam ankoji" />
+
+              {{ partial "featured" .}}
 
               <header>
                 <div class="bg-gray8 rounded-3xl flex justify-between h-20">
@@ -153,18 +160,18 @@
             </article>  
 
             {{ if gt (len .Pages) 0 }}
-            <div class="chapterSidebar relative w-full sm:w-[20%] order-2 md:order-2 sm:order-2 items-center mx-auto">
-                <div class="flex flex-col justify-center">
-                    <div class="text-center h-6">
-                        <h5 class=" text-peach text-md inline-block border-b border-peach1">Chapters</h5>
+            <div class="relative w-full sm:w-[20%] order-2 md:order-2 sm:order-2 items-center mx-auto container">
+                <div class="flex flex-col justify-center items-center">
+                    <div class="text-center">
+                        <h1 class="text-3xl text-peach text-md inline-block border-b border-peach1">Chapters</h1>
                         <!-- <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div> -->
                     </div>
-                    <ul class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar"
+                    <ul class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar pt-4 text-gray5"
                         id="sidebar">
                         {{ range $index, $page := .Pages }}
                         <li class="flex flex-col">
-                            <a class="no-underline h-4" href="{{ .RelPermalink }}">
-                                <span class="text-gray3 bold uppercase text-md line-clamp-1 hover:text-peach">
+                            <a class="no-underline" href="{{ .RelPermalink }}">
+                                <span class="text-gray3 bold uppercase text-md hover:text-peach">
                                     <!-- <span class="gradient-text mb-0 font-extrabold">{{ printf "%02d" ( add $index 1 )}}</span> -->
                                     {{ $page.Title }}
                                 </span>
@@ -183,9 +190,9 @@
             {{ end }}
             
         </div>
-        
+      </main>
 
-</main>
+
 {{ end }}
 
 {{ define "footer" }}

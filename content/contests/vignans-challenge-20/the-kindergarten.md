@@ -1,6 +1,7 @@
 ---
 title: The Kindergarten
-reading_time: 3 min
+lastmod: 2024-03-10
+contest: Vignan Challenge 20
 author: Gautam Ankoji
 ---
 

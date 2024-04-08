@@ -1,7 +1,9 @@
 ---
 title: Power of Negative Numbers
 description: Problem 9
-reading_time: 4min
+lastmod: 2024-02-25
+contest: Vignan Challenge 19
+author: Gautam Ankoji
 ---
 
 ##### Problem Statement

@@ -1,7 +1,9 @@
 ---
 title: Decimal to Binary
 description: Problem 3
-reading_time: 4 min
+lastmod: 2024-02-25
+contest: Vignan Challenge 19
+author: Gautam Ankoji
 ---
 
 

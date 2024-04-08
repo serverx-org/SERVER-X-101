@@ -1,6 +1,7 @@
 ---
 title: MTV and his Matrix
-reading_time: 2.5 min
+lastmod: 2024-03-10
+contest: Vignan Challenge 20
 author: Gautam Ankoji
 ---
 
