@@ -4,7 +4,7 @@ description: Embark on Your Data Science Journey - Beginner-Friendly Projects to
 author: Geeth Sowri
 lastmod: 2024-02-24T08:36:36-07:00
 tags: 
-  - blockchain
+  - data-science
   - introduction
 ---
 
