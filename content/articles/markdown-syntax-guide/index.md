@@ -210,13 +210,7 @@ Certainly! Below are various Markdown stylings you can use:
 {{< file "markdown" "article.md" >}}
 
 ```md
-![sample Image](/img/sample.png)
-```
-
-{{< file "markdown" "article.md" >}}
-
-```md
-![Link text](https://jsd.012700.xyz/gh/jerryc127/CDN/img/Markdown-Style-test-cover.png)
+![sample Image](img/sample.png)
 ```
 
 {{< tabgroup >}}
