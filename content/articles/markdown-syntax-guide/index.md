@@ -203,8 +203,8 @@ Certainly! Below are various Markdown stylings you can use:
 - articles
   └── markdown-syntax-guide
        ├── img
-       |    ├── featured.png
-       |    └── sample.png
+       │    ├── featured.png
+       │    └── sample.png
        └── index.md
 ```
 
