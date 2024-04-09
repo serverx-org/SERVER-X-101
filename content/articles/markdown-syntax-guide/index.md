@@ -201,10 +201,11 @@ Certainly! Below are various Markdown stylings you can use:
 
 ```md
 - articles
-  └── your-article
-       └── img
-            ├── featured.png
-            └── sample.png
+  └── markdown-syntax-guide
+       ├── img
+       |    ├── featured.png
+       |    └── sample.png
+       └── index.md
 ```
 
 {{< file "markdown" "article.md" >}}
