@@ -22,29 +22,29 @@
   }
 
   input.tab-input {
+    @apply w-5 block mr-2;
     display: none;
   }
 
   label.tab-label {
-    border-color: transparent;
-    border-radius: 4px 4px 0px 0px;
     color: #f8f8f8;
-    border-width: 2px;
     cursor: pointer;
     display: inline-block;
     order: 1;
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 1rem 0rem 0.6rem;
     position: relative;
-    top: 1px;
+    top: 2px;
     user-select: none;
   }
   
   input.tab-input:checked + label.tab-label {
     border-width: 2px;
+    border-radius: 6px 6px 0px 0px;
     background-color: #12181b;
     color: #f8f8f8;
     border-color: #454e56;
     border-bottom-style: hidden;
+    z-index: 50;
   }
 
   .tab-content {
