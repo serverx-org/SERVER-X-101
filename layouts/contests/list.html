@@ -5,16 +5,93 @@
 {{ define "main" }}
 <main class="prose dark:prose-invert container">
 
-    {{ if eq .CurrentSection.RelPermalink "/contests/" }}
+    {{/* Sliding cards */}}
+    <style>
+        .grid-container {
+            overflow: hidden;
+        }
 
+        .grid-list {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-height: 100%;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .grid-list li {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var isDragging = false;
+            var startX = 0;
+            var scrollLeft = 0;
+            var animationFrameRequested = false;
+            var $gridContainer = $('.grid-container');
+
+            $gridContainer.on('mousedown', function (event) {
+                isDragging = true;
+                startX = event.pageX - $gridContainer.offset().left;
+                scrollLeft = $gridContainer.scrollLeft();
+                requestAnimationFrame(scrollUpdate);
+            });
+
+            $(document).on('mouseup', function () {
+                isDragging = false;
+                cancelAnimationFrame(scrollUpdate);
+            });
+
+            $(document).on('mousemove', function (event) {
+                if (isDragging) {
+                    var mouseX = event.pageX - $gridContainer.offset().left;
+                    var moveX = mouseX - startX;
+                    $gridContainer.scrollLeft(scrollLeft - moveX);
+                    requestAnimationFrame(scrollUpdate);
+                }
+            });
+
+            $(document).on('wheel', function (event) {
+                if (event.shiftKey) {
+                    event.preventDefault();
+                    var delta = event.originalEvent.deltaY;
+                    $gridContainer.scrollLeft($gridContainer.scrollLeft() + delta);
+                    requestAnimationFrame(scrollUpdate);
+                }
+            });
+
+            function scrollUpdate() {
+                if (!isDragging) {
+                    cancelAnimationFrame(scrollUpdate);
+                    return;
+                }
+                animationFrameRequested = false;
+                requestAnimationFrame(scrollUpdate);
+            }
+        });
+    </script>
+
+    {{ if eq .CurrentSection.RelPermalink "/contests/" }}
 
     {{/* Layout for ALL contests */}}
     <header class="text-left mb-8 mt-20 pl-4">
-        <h1 class="text-5xl mb-1 text-gray1" style="text-shadow: 0px 4px #009a3b;">Contests | Coming Soon...</h1>
+        <h1 class="text-3xl md:text-5xl mb-1 text-gray1"
+            style=" text-shadow: 0px 4px #009a3b;">Contests | Coming Soon...</h1>
         <p class="my-0 text-gray3 p-2">...</p>
     </header>
 
-    <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+    <div
+        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
     <ul class="grid-list justify-items-center pl-0">
         {{ range where .Pages.ByLastmod.Reverse "Params.contests" true }}
@@ -26,14 +103,18 @@
     </ul>
 
     <header class="text-left pl-4 mb-8 mt-20">
-        <h1 class="text-5xl mb-1">Vignan Challenges</h1>
-        <p class="my-0 text-gray3">Vignan Challenges - Coding contests by Vignan's Institute of Information Technology,
-            where students demonstrate coding and problem-solving abilities in competitive settings.</p>
+        <h1 class="text-3xl md:text-5xl mb-1 text-gray1"
+        style=" text-shadow: 0px 4px #009a3b;">Vignan Challenges</h1>
+        <p class="my-0 text-gray3">Vignan Challenges - Coding contests by
+            Vignan's Institute of Information Technology,
+            where students demonstrate coding and problem-solving abilities in
+            competitive settings.</p>
     </header>
 
-    <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+    <div
+        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
-    <ul class="grid-list justify-items-center pl-0">
+    <ul class="grid-list justify-items-center pl-0 py-6">
         {{ range where .Pages "Params.vignan-challenges" true }}
         <li class="list-none p-0">
             {{ $img := (print .RelPermalink "img/featured.webp") }}
@@ -43,13 +124,16 @@
     </ul>
 
     <header class="text-left pl-4 mb-8 mt-20">
-        <h1 class="text-5xl mb-1">Practice Problems</h1>
-        <p class="my-0 text-gray3">Practice problems with various approaches and solutions.</p>
+        <h1 class="text-3xl md:text-5xl mb-1 text-gray1"
+        style=" text-shadow: 0px 4px #009a3b;">Practice Problems</h1>
+        <p class="my-0 text-gray3">Practice problems with various approaches and
+            solutions.</p>
     </header>
 
-    <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+    <div
+        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
-    <ul class="grid-list justify-items-center pl-0">
+    <ul class="grid-list justify-items-center pl-0 py-6">
         {{ range where .Pages "Params.practice" true }}
         <li class="list-none p-0">
             {{ $img := (print .RelPermalink "img/featured.webp") }}
@@ -64,65 +148,76 @@
 {{/* Layout for individual course landing page */}}
 <main class="container">
     <header class="text-center my-12">
-        <h1 class="lg:text-6xl mb-0 inline-block mx-auto gradient-text sm:text-2xl">{{ .Params.title }}</h1>
+        <h1
+            class="lg:text-6xl mb-0 inline-block mx-auto gradient-text sm:text-2xl">{{
+            .Params.title }}</h1>
         <p class="text-gray3 my-1">{{ .Params.description }}</p>
     </header>
 
-    <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
-
+    <div
+        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
     <!-- {{ if .Params.vimeo }}
-                <div class="max-w-3xl mx-auto">
-                    <video-player free="true" single="true"></video-player>
-                </div>
-                {{ end }} -->
+                    <div class="max-w-3xl mx-auto">
+                        <video-player free="true" single="true"></video-player>
+                    </div>
+                    {{ end }} -->
 
     <div class="flex flex-col sm:flex-row justify-content">
-        <div class="max-w-5xl mx-auto ancor-blue sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-2 sm:order-2 pb-4">
+        <div
+            class="max-w-5xl mx-auto ancor-blue sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-2 sm:order-2 pb-4">
 
             <div class="max-w-3xl mx-auto">
                 {{ partial "featured" .}}
             </div>
-            {{ $author := .Site.GetPage (print "/authors/" (anchorize .Params.Author)) }}
-            {{ $authorImg := (print "/authors/img/" (anchorize .Params.Author) ".jpg") }}
-            <div class="flex items-center no-underline justify-center" itemprop="author" name="{{ .Params.author }}">
-                <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar" />
+            {{ $author := .Site.GetPage (print "/authors/" (anchorize
+            .Params.Author)) }}
+            {{ $authorImg := (print "/authors/img/" (anchorize .Params.Author)
+            ".jpg") }}
+            <div class="flex items-center no-underline justify-center"
+                itemprop="author" name="{{ .Params.author }}">
+                <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}"
+                    alt="{{ $author.Title }} avatar" />
                 <span class="flex flex-col ml-2">
                     <span class="text-lg">Authored By
-                        <a class="no-underline text-peach1" href="/authors/{{ anchorize .Params.author }}/">{{ title
+                        <a class="no-underline text-peach1"
+                            href="/authors/{{ anchorize .Params.author }}/">{{
+                            title
                             (.Params.authorname | default .Params.author) }}</a>
                     </span>
                     <span class="text-sm text-gray4">
-                        {{ (.Params.authorbio | default "I game. I code. Ctrl, Alt, Delight!") }}
+                        {{ (.Params.authorbio | default
+                        "I game. I code. Ctrl, Alt, Delight!") }}
                     </span>
                 </span>
             </div>
             {{ .Content }}
 
-
-
-
         </div>
 
         {{ if gt (len .Pages) 0 }}
-        <div class="relative w-full sm:w-1/4 order-2 md:order-1 sm:order-1 items-center mx-auto">
+        <div
+            class="relative w-full sm:w-1/4 order-2 md:order-1 sm:order-1 items-center mx-auto">
             <div class="flex flex-col justify-center">
                 <div class="text-center">
-                    <h1 class="text-3xl text-peach inline-block border-b border-peach1">Problems</h1>
+                    <h1
+                        class="text-3xl text-peach inline-block border-b border-peach1">Problems</h1>
                     <!-- <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div> -->
                 </div>
-                <ul class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar"
+                <ul
+                    class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar"
                     id="sidebar">
                     {{ range $index, $page := .Pages }}
                     <li class="flex flex-col">
                         <a class="no-underline" href="{{ .RelPermalink }}">
                             <!-- <span
-                                        class="absolute -top-2 -left-5 font-display leading-6 text-center text-3xl w-10 rounded-full p-2">
-                                        {{/* {{ printf "%02d" ( add $index 1 )}} */}}
-                                        {{ $page.Params.emoji }}
-                                    </span> -->
+                                            class="absolute -top-2 -left-5 font-display leading-6 text-center text-3xl w-10 rounded-full p-2">
+                                            {{/* {{ printf "%02d" ( add $index 1 )}} */}}
+                                            {{ $page.Params.emoji }}
+                                        </span> -->
                             <h6 class="text-gray2 text-md hover:text-peach">
-                                <span class="gradient-text mb-0">{{ printf "%02d" ( add $index 1 )}}</span>
+                                <span class="gradient-text mb-0">{{ printf
+                                    "%02d" ( add $index 1 )}}</span>
                                 {{ $page.Title }}
                             </h6>
                             <!-- <p class="text-gray3">{{ $page.Description }}</p> -->
@@ -133,26 +228,30 @@
             </div>
             {{ end }}
 
-
-
         </div>
 
         {{ end }}
 
     </div>
+
+    {{ if ne .CurrentSection.RelPermalink "/contests/" }}
     <div class="h-12"></div>
     <!-- articles comments section -->
-    <h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span class="text-base">|</span>
+    <h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4>
+    <span class="text-base">|</span>
     <span>Please Reload to load comments</span>
     <div class="md:mr-4 lg:mr-4">
-        <script src="https://giscus.app/client.js" data-repo="SERVER-X-101/SERVER-X-101" data-repo-id="R_kgDOLoz2-A"
-            data-category="Contents" data-category-id="DIC_kwDOLoz2-M4CeaGh" data-mapping="title" data-strict="0"
-            data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top"
-            data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
+        <script src="https://giscus.app/client.js"
+            data-repo="SERVER-X-101/SERVER-X-101" data-repo-id="R_kgDOLoz2-A"
+            data-category="Contents" data-category-id="DIC_kwDOLoz2-M4CeaGh"
+            data-mapping="title" data-strict="0"
+            data-reactions-enabled="0" data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="preferred_color_scheme" data-lang="en"
+            crossorigin="anonymous" async>
             </script>
-
     </div>
-    <!-- </div> -->
+    {{ end }}
 
 </main>
 {{ end }}

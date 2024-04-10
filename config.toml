@@ -10,6 +10,12 @@ home = ["HTML", "RSS"]
 [params]
 mainSections = ["articles", "snippets", "authors", "contests"]
 
+[params.newsletter]
+enable = true
+title = ""
+content = "Want more content like this? Join our newsletter down below to receive updates to your mailbox"
+mailchimpFormUrl = "https://gmail.us22.list-manage.com/subscribe/post?u=ba8c53fd9942f7fc2cac61514&amp;id=39896c121a&amp;f_id=00a6c6e1f0"
+mailchimpFormKey = "b_ba8c53fd9942f7fc2cac61514_39896c121a"
 
 [markup.goldmark.renderer]
 unsafe= true

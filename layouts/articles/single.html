@@ -3,12 +3,51 @@
 {{ partial "topnav" }}
 {{ end }}
 
-
-
 {{ define "main" }}
 <main class="container">
+
+	<!-- <style>
+		#breadcrumbs {
+		  display: flex;
+		  list-style: none;
+		  padding: 0;
+		}
+		#breadcrumbs li {
+		  margin-right: 5px;
+		}
+		#breadcrumbs li::before {
+		  content: ">";
+		  margin-left: 5px;
+		  color: #999; /* Arrow color */
+		}
+		#breadcrumbs li:last-child::before {
+		  content: "";
+		}
+	  </style>
+
+	<div class="pb-4">
+
+		<ul id="breadcrumbs">
+			{{ $urlParts := split .Permalink "/" }}
+			{{ $currentPath := "" }}
+			{{ $baseURL := .Params.baseURL }}
+			{{ range $index, $part := $urlParts }}
+			{{ if ne $index 0 }}
+			{{ $currentPath = printf "%s/%s" $currentPath $part }}
+			<li>
+				<a href="{{ $currentPath }}">
+
+					{{ replace ($part | title) "-" " " }}
+				</a>
+			</li>
+			{{ end }}
+			{{ end }}
+		</ul>
+	</div> -->
+
 	<div class="flex flex-col sm:flex-row justify-content">
-		<article itemscope itemtype="http://schema.org/Article" class=" sm:w-3/4 mb-4 sm:mb-0 order-2 sm:order-1 pb-4">
+		<article itemscope itemtype="http://schema.org/Article"
+			class=" sm:w-3/4 mb-4 sm:mb-0 order-2 sm:order-1 pb-4">
 			<meta itemprop="datePublished" content="{{ .PublishDate }}" />
 			<meta itemprop="dateModified" content="{{ .Lastmod }}" />
 			<meta itemprop="image" content="img/featured.png" />
@@ -19,16 +58,20 @@
 			<header>
 				<div class="bg-gray8 py-5 px-3 rounded-3xl mb-5 flex justify-between mt-3">
 
-					{{ $author := .Site.GetPage (print "/authors/" (anchorize .Params.Author)) }}
-					{{ $authorImg := (print "/authors/img/" (anchorize .Params.Author) ".jpg") }}
-					<a class="flex items-center no-underline" itemprop="author" name="{{ .Params.author }}"
+					{{ $author := .Site.GetPage (print "/authors/" (anchorize .Params.Author))
+					}}
+					{{ $authorImg := (print "/authors/img/" (anchorize .Params.Author) ".jpg")
+					}}
+					<a class="flex items-center no-underline" itemprop="author"
+						name="{{ .Params.author }}"
 						href="/authors/{{ anchorize .Params.author }}/">
 						<img class="w-10 h-10 rounded-full block" src="{{ $authorImg }}"
 							alt="{{ $author.Title }} avatar">
 						<span class="flex flex-col ml-2">
 							<span class="no-underline"> {{ title .Params.author }}</span>
 							<span class="text-xs text-gray4">
-								• <time itemprop="dateModified">{{ .Lastmod.Format "Jan 2, 2006"}}</time>&nbsp;
+								• <time itemprop="dateModified">{{ .Lastmod.Format
+									"Jan 2, 2006"}}</time>&nbsp;
 								• {{ .ReadingTime }} min{{ if (ne .ReadingTime 1) }}s{{ end }}
 							</span>
 						</span>
@@ -38,7 +81,8 @@
 					<span class="flex items-center justify-content ">
 						{{ range .Params.tags }}
 						<a href="/tags/{{ . }}"><span
-								class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300 ">#{{ .
+								class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300 ">#{{
+								.
 								}}</span></a>
 						{{ end }}
 
@@ -56,10 +100,12 @@
 				<div class="py-1 px-3 mb-10 flex justify-between mt-3">
 
 					<span class="flex items-center justify-content t-0">
-						<h5 class="pr-2 text-lg gradient-text-green text-gray1">Related Articles: </h5>
+						<h5 class="pr-2 text-lg gradient-text-green text-gray1">Related Articles:
+						</h5>
 						{{ range .Params.related }}
 						<a href="/articles/{{ . }}"><span
-								class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300">{{ .
+								class="tag tag-{{ . }} font-bold hover:scale-110 transition-all duration-300">{{
+								.
 								}}</span></a>
 						{{ end }}
 					</span>
@@ -68,24 +114,22 @@
 				<div class="mb-10"></div>
 				{{ end }}
 
-
 			</header>
 
 			<!-- share links -->
 			{{ partial "share-buttons.html" . }}
 			<div class="mb-10"></div>
 
-
 			<!-- Article content -->
-			<section class="prose dark:prose-invert max-w-full lesson-content ancor-blue" itemprop="articleBody">
+			<section class="prose dark:prose-invert max-w-full lesson-content ancor-blue"
+				itemprop="articleBody">
 
-				<h1 itemprop="name headline" id="{{ anchorize .Title }}" class="gradient-text">
+				<h1 itemprop="name headline" id="{{ anchorize .Title }}"
+					class="gradient-text">
 					{{ .Title }}
 				</h1>
 
-
 				{{ .Content }}
-
 
 				<!-- random recommended articles -->
 				<!-- {{ $currentArticle := . }}
@@ -135,9 +179,11 @@
 				<!-- recommended articles -->
 				{{ if and .Params.recommended (gt (len .Params.recommended) 0) }}
 				<div class="py-1 px-3 mb-20 flex justify-between mt-3"></div>
-				<div class="mx-auto w-[25%] h-[3px] my-12 bg-gradient-to-r from-blue-600 to-purple-500 rounded-full">
+				<div
+					class="mx-auto w-[25%] h-[3px] my-12 bg-gradient-to-r from-blue-600 to-purple-500 rounded-full">
 				</div>
-				<h4 class="text-white inline-block my-6 border-b-2 border-gray6 ">Recommended</h4>
+				<h4
+					class="text-white inline-block my-6 border-b-2 border-gray6 ">Recommended</h4>
 				<ul>
 					{{ range .Params.recommended }}
 					<li>
@@ -152,24 +198,29 @@
 				<div class="h-12"></div>
 
 				<!-- articles comments section -->
-				<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span
+				<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4>
+				<span
 					class="text-base">|</span> <span>Please reload to load comments</span>
 				<div class="m-4">
-					<script src="https://giscus.app/client.js" data-repo="SERVER-X-101/SERVER-X-101"
-						data-repo-id="R_kgDOLoz2-A" data-category="Articles" data-category-id="DIC_kwDOLoz2-M4CeaGa"
-						data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0"
-						data-input-position="top" data-theme="preferred_color_scheme" data-lang="en"
+					<script src="https://giscus.app/client.js"
+						data-repo="SERVER-X-101/SERVER-X-101"
+						data-repo-id="R_kgDOLoz2-A" data-category="Articles"
+						data-category-id="DIC_kwDOLoz2-M4CeaGa"
+						data-mapping="title" data-strict="0" data-reactions-enabled="1"
+						data-emit-metadata="0"
+						data-input-position="top" data-theme="preferred_color_scheme"
+						data-lang="en"
 						crossorigin="anonymous" async>
 						</script>
 				</div>
 
 			</section>
 
-
 		</article>
 		<!-- TOC fixed sidebar -->
 		{{ if not .Params.disable_toc }}
-		<aside class="tableOfContents relative w-full sm:w-1/4 order-1 sm:order-2 items-center mx-auto">
+		<aside
+			class="tableOfContents relative w-full sm:w-1/4 order-1 sm:order-2 items-center mx-auto">
 			{{ .TableOfContents }}
 		</aside>
 		{{ end }}
@@ -177,7 +228,6 @@
 
 </main>
 {{ end }}
-
 
 {{ define "footer" }}
 {{ partial "footer" }}
