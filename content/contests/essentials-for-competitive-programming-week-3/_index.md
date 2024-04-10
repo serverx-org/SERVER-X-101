@@ -11,6 +11,13 @@ tags:
 author: Gautam Ankoji
 ---
 
+<div align="center">
+
+```
+Practice problems will be available soon!
+```
+</div>
+
 ## 📝 Essentials for Competitive Programming: Week #3
 
 **This week's focus: Bit Manipulation.**

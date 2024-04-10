@@ -22,8 +22,28 @@
         }
 
         .grid-list::-webkit-scrollbar {
+            width: 6px; 
+            height: 4px; 
+            padding-top: 6px;
+        }
+
+        .grid-list::-webkit-scrollbar-vertical {
             display: none;
         }
+
+        .grid-list::-webkit-scrollbar-track {
+            background-color: #141b23; 
+        }
+
+        .grid-list::-webkit-scrollbar-thumb {
+            background-color: #454e56;
+            border-radius: 6px;
+        }
+        
+        .grid-list::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(255, 73, 107);
+        }
+
 
         .grid-list li {
             flex: 0 0 auto;

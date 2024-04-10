@@ -60,7 +60,7 @@
 
 <input type="radio" class="tab-input" name="tab-select-{{ $group }}" id="tab-{{ $group }}-{{ $index }}" {{ if eq $index 0 }}checked{{ end }}>
 <label for="tab-{{ $group }}-{{ $index }}" class="tab-label">
-  <span class="flex flex-row items-center"><span class="w-5 block mr-2">{{ partial $icon }}</span>{{ $name }}</span>
+  <span class="flex flex-row items-center pb-1"><span class="w-5 block mr-2">{{ partial $icon }}</span>{{ $name }}</span>
 </label> 
 <div class="tab-content m-0 tab-content-{{ $group }}-{{ $index }}">
   {{ .Inner | markdownify }}
