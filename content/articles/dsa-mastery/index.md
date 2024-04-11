@@ -28,9 +28,9 @@ Data structures and algorithms form the backbone of computational science, servi
 
 ## Data Structures and Algorithms Roadmap
 
-<div>
+<div align="center">
 
-   <img src="/img/dsa-roadmap.png" title="DSA Roadmap" alt="DSA Roadmap"/>
+   <img src="img/dsa-roadmap.png" title="DSA Roadmap" alt="DSA Roadmap"/>
 
 </div>
 
