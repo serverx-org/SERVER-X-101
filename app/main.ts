@@ -16,15 +16,15 @@ console.log('Our community excels in programming, development, and research, lea
 import '../styles/app.scss';
 import flamethrower from 'flamethrower-router';
 import { scrollSave } from './util/scroll';
-import { copyClipboard } from './util/copy-clipboard';
+// import { copyClipboard } from './util/copy-clipboard';
 import { progressBar } from './util/progress-bar';
-import { enableDragScroll } from './util/drag-scroll';
+// import { enableDragScroll } from './util/drag-scroll';
 import './util/key-bindings';
 // saves scroll position on navbar
 scrollSave();
 
 // copy clipboard for code blocks
-copyClipboard();
+// copyClipboard();
 
 // reading progress bar on scroll
 window.onscroll = function () { progressBar() };
