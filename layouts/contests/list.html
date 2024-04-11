@@ -51,56 +51,7 @@
         }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var isDragging = false;
-            var startX = 0;
-            var scrollLeft = 0;
-            var animationFrameRequested = false;
-            var $gridContainer = $('.grid-container');
-
-            $gridContainer.on('mousedown', function (event) {
-                isDragging = true;
-                startX = event.pageX - $gridContainer.offset().left;
-                scrollLeft = $gridContainer.scrollLeft();
-                requestAnimationFrame(scrollUpdate);
-            });
-
-            $(document).on('mouseup', function () {
-                isDragging = false;
-                cancelAnimationFrame(scrollUpdate);
-            });
-
-            $(document).on('mousemove', function (event) {
-                if (isDragging) {
-                    var mouseX = event.pageX - $gridContainer.offset().left;
-                    var moveX = mouseX - startX;
-                    $gridContainer.scrollLeft(scrollLeft - moveX);
-                    requestAnimationFrame(scrollUpdate);
-                }
-            });
-
-            $(document).on('wheel', function (event) {
-                if (event.shiftKey) {
-                    event.preventDefault();
-                    var delta = event.originalEvent.deltaY;
-                    $gridContainer.scrollLeft($gridContainer.scrollLeft() + delta);
-                    requestAnimationFrame(scrollUpdate);
-                }
-            });
-
-            function scrollUpdate() {
-                if (!isDragging) {
-                    cancelAnimationFrame(scrollUpdate);
-                    return;
-                }
-                animationFrameRequested = false;
-                requestAnimationFrame(scrollUpdate);
-            }
-        });
-    </script>
-
+    
     {{ if eq .CurrentSection.RelPermalink "/contests/" }}
 
     {{/* Layout for ALL contests */}}

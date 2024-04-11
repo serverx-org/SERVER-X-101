@@ -51,7 +51,6 @@ pre:hover .copy-code {
   @apply pb-[1px];
   animation-name: pop;
   animation-duration: 0.5s;
-  
   animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* cubic bezier timing function for smoothness */
 }
 
@@ -67,11 +66,37 @@ pre:hover .copy-code {
   }
 }
 
+.tabs {
+  @apply flex flex-wrap relative;
 
+  &.tabs-left {
+    @apply justify-start;
+  }
 
+  &.tabs-right {
+    @apply justify-end;
+  }
+
+  input.tab-input {
+    @apply w-5 hidden mr-2;
+  }
+
+  .tab-label {
+    @apply text-gray4 cursor-pointer inline-block order-1 px-2 pb-2 pt-[8.5px] relative top-2 select-none border border-transparent;
+  }
+
+  input.tab-input:checked + label.tab-label {
+    @apply border-2 rounded-t-lg bg-gray7 text-gray4 border-gray5 border-b-0 z-40 mb-[4px] lg:mb-[6px] p-2 pr-4;
+  }
+
+  .tab-content {
+    @apply hidden order-2 w-full m-0;
+  }
+
+}
 
 .file-name {
-    @apply inline-flex items-center p-2 pr-4 bg-gray7 bg-opacity-100 text-gray4 border-t-2 border-l-2 border-r-2 border-gray5 rounded-t-md z-50 relative bottom-[-2px];
+    @apply inline-flex items-center p-2 pr-4 bg-gray7 bg-opacity-100 text-gray4 border-t-2 border-l-2 border-r-2 border-gray5 rounded-t-md z-40 relative bottom-[-2px] ;
   
     .file-icon {
       @apply w-5 block mr-2;
@@ -82,7 +107,6 @@ pre:hover .copy-code {
     pre {
       /* @apply whitespace-pre-wrap; */
       @apply rounded-tr-md rounded-b-md pt-8;
-      position: relative; /* Added */
       
       span.cl {
         @apply pr-4;

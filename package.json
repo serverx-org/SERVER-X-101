@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "hugo": "hugo server --forceSyncStatic --port 8907",
+    "hugo": "hugo server --forceSyncStatic --port 6789",
     "start": "concurrently \"vite build --watch\" \"npm run hugo\"",
     "vbuild": "vite build",
     "build": "vite build && hugo",
@@ -21,6 +21,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "@tailwindcss/typography": "^0.5.4",
     "@tsconfig/svelte": "^2.0.1",
+    "@types/jquery": "^3.5.29",
     "@types/vimeo__player": "^2.16.3",
     "@types/youtube-player": "^5.5.6",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
@@ -47,6 +48,7 @@
     "youtube-player": "^5.5.2"
   },
   "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.4"
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "jquery": "^3.7.1"
   }
 }

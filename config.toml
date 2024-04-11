@@ -1,4 +1,4 @@
-baseURL = 'https://www.serverx.org.in/'
+baseURL = 'https://serverx.org.in/'
 languageCode = 'en-us'
 title = 'SERVER-X-101'
 enableRobotsTXT = true

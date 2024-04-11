@@ -7,64 +7,16 @@
   .tabs input#tab-{{ $group }}-{{ $index }}:checked ~ .tab-content-{{ $group }}-{{ $index }} {
     display: block;
   }
-  
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-
-  &.tabs-left {
-    justify-content: flex-start;
-  }
-
-  &.tabs-right {
-    justify-content: flex-end;
-  }
-
-  input.tab-input {
-    @apply w-5 block mr-2;
-    display: none;
-  }
-
-  label.tab-label {
-    color: #f8f8f8;
-    cursor: pointer;
-    display: inline-block;
-    order: 1;
-    padding: 0.3rem 1rem 0rem 0.6rem;
-    position: relative;
-    top: 2px;
-    user-select: none;
-  }
-  
-  input.tab-input:checked + label.tab-label {
-    border-width: 2px;
-    border-radius: 6px 6px 0px 0px;
-    background-color: #12181b;
-    color: #f8f8f8;
-    border-color: #454e56;
-    border-bottom-style: hidden;
-    z-index: 50;
-  }
-
-  .tab-content {
-    display: none;
-    order: 2;
-    width: 100%;
-    margin-top: 0%;
-    margin-left: 0%;
-    margin: 0;
-  }
-}
 </style>
 
-<input type="radio" class="tab-input" name="tab-select-{{ $group }}" id="tab-{{ $group }}-{{ $index }}" {{ if eq $index 0 }}checked{{ end }}>
+<input type="radio" class="tab-input" name="tab-select-{{ $group }}"
+  id="tab-{{ $group }}-{{ $index }}" {{ if eq $index 0 }}checked{{ end }}>
 <label for="tab-{{ $group }}-{{ $index }}" class="tab-label">
-  <span class="flex flex-row items-center pb-1"><span class="w-5 block mr-2">{{ partial $icon }}</span>{{ $name }}</span>
-</label> 
+  <span class="flex flex-row items-center pb-1"><span class="w-5 block mr-2">{{
+      partial $icon }}</span>{{ $name }}</span>
+</label>
 <div class="tab-content m-0 tab-content-{{ $group }}-{{ $index }}">
   {{ .Inner | markdownify }}
 </div>
 
-  
 {{ .Page.Scratch.Set "tabElementIndex" (add 1 $index) }}
