@@ -30,7 +30,7 @@ Data structures and algorithms form the backbone of computational science, servi
 
 <div>
 
-   <img src="./img/dsa-roadmap.png" title="DSA Roadmap" alt="DSA Roadmap"/>
+   <img src="/img/dsa-roadmap.png" title="DSA Roadmap" alt="DSA Roadmap"/>
 
 </div>
 
