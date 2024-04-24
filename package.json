@@ -36,7 +36,7 @@
     "firebase-tools": "^11.11.0",
     "flamethrower-router": "^0.0.0-meme.12",
     "js-confetti": "^0.10.2",
-    "postcss": "^8.4.16",
+    "postcss": "^8.4.31",
     "sass": "^1.54.4",
     "svelte": "^3.49.0",
     "svelte-check": "^2.2.7",
