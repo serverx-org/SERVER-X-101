@@ -2,24 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://use.typekit.net/rcr1opg.css');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+@import url("https://use.typekit.net/rcr1opg.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
 // @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap");
 
-@import './button.scss';
-@import './special-effects.scss';
-@import './contests.scss';
-@import './articles.scss';
-@import './syntax.scss';
-@import './mixins.scss';
-@import './tags.scss';
+@import "./button.scss";
+@import "./special-effects.scss";
+@import "./contests.scss";
+@import "./articles.scss";
+@import "./syntax.scss";
+@import "./mixins.scss";
+@import "./tags.scss";
 // @import './pricing.scss';
-@import './ui.scss';
+@import "./ui.scss";
 
+// fonts
+
+.font-rowdies {
+    font-family: "Rowdies";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
 
 .selector {
     user-drag: none;
@@ -57,7 +65,7 @@
 html {
     display: block;
     font-size: 13px;
-    @media (min-width:1024px) {
+    @media (min-width: 1024px) {
         font-size: 16px;
     }
     // scroll-behavior: smooth;
@@ -65,7 +73,6 @@ html {
 
 // background-color: #000000;
 // background-color: #4d4855;
-
 
 body {
     @apply dark:bg-[#171e2d] dark:text-gray1;
@@ -101,24 +108,30 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-display font-normal;
+    @apply font-display font-normal;
 }
-
-
 
 .ancor-blue {
     p a {
-      @apply text-blue-500 no-underline hover:text-peach1 duration-200;
+        @apply text-blue-500 no-underline hover:text-peach1 duration-200;
     }
-  
-    li a, a {
-      @apply text-blue-500 no-underline hover:text-peach1 duration-200;
+
+    li a,
+    a {
+        @apply text-blue-500 no-underline hover:text-peach1 duration-200;
     }
-  }
+}
 
-  
+.rotate-on-click {
+    animation: rotateAnimation 3s;
+}
 
-svg { 
+@keyframes rotateAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+svg {
     width: auto;
 }
 
@@ -141,7 +154,7 @@ video-player {
         left: 0;
         width: 100%;
         height: 100%;
-    } 
+    }
 }
 
 .drag-none {
@@ -157,7 +170,7 @@ video-player {
     font-size: 4rem;
     // line-height: 0.6;
     padding-right: 0.1em;
-    font-family: 'Mea Culpa', cursive;
+    font-family: "Mea Culpa", cursive;
     font-weight: medium;
     text-transform: uppercase;
 }

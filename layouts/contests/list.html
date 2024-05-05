@@ -19,12 +19,14 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             transition: transform 0.3s ease;
+
         }
 
         .grid-list::-webkit-scrollbar {
-            width: 6px; 
-            height: 4px; 
+            width: 6px;
+            height: 4px;
             padding-top: 6px;
+
         }
 
         .grid-list::-webkit-scrollbar-vertical {
@@ -32,14 +34,15 @@
         }
 
         .grid-list::-webkit-scrollbar-track {
-            background-color: #141b23; 
+            background-color: #141b23;
         }
 
         .grid-list::-webkit-scrollbar-thumb {
             background-color: #454e56;
             border-radius: 6px;
+            cursor: grab;
         }
-        
+
         .grid-list::-webkit-scrollbar-thumb:hover {
             background-color: rgb(255, 73, 107);
         }
@@ -51,67 +54,149 @@
         }
     </style>
 
-    
+
+
     {{ if eq .CurrentSection.RelPermalink "/contests/" }}
 
     {{/* Layout for ALL contests */}}
-    <header class="text-left mb-8 mt-20 pl-4">
-        <h1 class="text-3xl md:text-5xl mb-1 text-gray1"
-            style=" text-shadow: 0px 4px #009a3b;">Contests | Coming Soon...</h1>
-        <p class="my-0 text-gray3 p-2">...</p>
+    <header class="text-left mb-8 mt-14 pl-4">
+        <h1 class="text-5xl mb-1 text-gray1" style=" text-shadow: 0px 4px #009a3b;">Contests</h1>
+        <p class="my-0 text-gray3 pt-2">Code your dreams into reality, one algorithm at a time.</p>
     </header>
 
-    <div
-        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
-
-    <ul class="grid-list justify-items-center pl-0">
+    <div class="mx-auto w-auto h-[2px] my-8 mb-8 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+    <!-- <ul class="grid-list justify-items-center pl-0">
         {{ range where .Pages.ByLastmod.Reverse "Params.contests" true }}
         <li class="list-none p-0">
             {{ $img := (print .RelPermalink "img/featured.webp") }}
             {{ partial "card" (dict "context" . "img" $img) }}
         </li>
         {{ end }}
-    </ul>
+    </ul> -->
 
-    <header class="text-left pl-4 mb-8 mt-20">
-        <h1 class="text-3xl md:text-5xl mb-1 text-gray1"
-        style=" text-shadow: 0px 4px #009a3b;">Vignan Challenges</h1>
-        <p class="my-0 text-gray3">Vignan Challenges - Coding contests by
-            Vignan's Institute of Information Technology,
-            where students demonstrate coding and problem-solving abilities in
-            competitive settings.</p>
-    </header>
 
-    <div
-        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+    <!-- Tabs for contests -->
+    <style>
+        /* Styles for tabs */
+        .tab {
+            display: none;
+        }
 
-    <ul class="grid-list justify-items-center pl-0 py-6">
-        {{ range where .Pages "Params.vignan-challenges" true }}
-        <li class="list-none p-0">
-            {{ $img := (print .RelPermalink "img/featured.webp") }}
-            {{ partial "card" (dict "context" . "img" $img) }}
-        </li>
-        {{ end }}
-    </ul>
+        .tab.active {
+            display: block;
+        }
+    </style>
 
-    <header class="text-left pl-4 mb-8 mt-20">
-        <h1 class="text-3xl md:text-5xl mb-1 text-gray1"
-        style=" text-shadow: 0px 4px #009a3b;">Practice Problems</h1>
-        <p class="my-0 text-gray3">Practice problems with various approaches and
-            solutions.</p>
-    </header>
+    <div class="tabs px-4 gap-6 pb-4 pt-1 flex items-center justify-center">
+        <button class="tab-btn" onclick="openTab(event, 'tab1')">
+            <div
+                class="group relative overflow-hidden rounded-[16px] h-20 flex items-center justify-center transition-all duration-300 ease-in-out">
+                <div onclick="showBorder(event, 'tab1')"
+                    class="border-overlay animate-spin-slow absolute -top-40 -bottom-40 left-10 right-10 bg-gradient-to-r from-transparent via-[#ff5d75] to-transparent">
+                </div>
+                <img class="relative rounded-3xl cover-fill" src="/img/practice_problems.png" alt="Practice Problems"
+                    width="140px">
+            </div>
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">
+            <div
+                class="group relative overflow-hidden rounded-[16px] h-20 flex items-center justify-center transition-all duration-300 ease-in-out">
+                <div onclick="showBorder(event, 'tab2')"
+                    class="border-overlay animate-spin-slow absolute -top-40 -bottom-40 left-10 right-10 bg-gradient-to-r from-transparent via-[#ff5d75] to-transparent">
+                </div>
+                <img class="relative rounded-3xl cover-fill" src="/img/vignan_challenge.png" alt="Vignan Challenges"
+                    width="140px">
+            </div>
+        </button>
+        <!-- <button class="border border-[#b2becd] rounded-full p-0.5 px-4" onclick="openTab(event, 'tab3')">Tab 3</button> -->
+    </div>
 
-    <div
-        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+    <div id="tab1" class="tab active">
+        <div>
+            <header class="text-center pl-4 mb-8 mt-2">
+                <h1 class="text-2xl mb-1 text-[#d6d600]">Practice
+                    Problems</h1>
+                <p class="my-0 text-gray3">Practice problems with various approaches and
+                    solutions.
+                </p>
+            </header>
 
-    <ul class="grid-list justify-items-center pl-0 py-6">
-        {{ range where .Pages "Params.practice" true }}
-        <li class="list-none p-0">
-            {{ $img := (print .RelPermalink "img/featured.webp") }}
-            {{ partial "card" (dict "context" . "img" $img) }}
-        </li>
-        {{ end }}
-    </ul>
+            <ul class="grid-list justify-items-center pl-0 py-6">
+                {{ range where .Pages "Params.practice" true }}
+                <li class="list-none p-0">
+                    {{ $img := (print .RelPermalink "img/featured.webp") }}
+                    {{ partial "card" (dict "context" . "img" $img) }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab2" class="tab">
+        <div>
+            <header class="text-center pl-4 mb-8 mt-2">
+                <h1 class="text-2xl mb-1 text-blue-500">Vignan Challenges</h1>
+                <p class="my-0 text-gray3">Vignan Challenges - Coding contests by
+                    Vignan's Institute of Information Technology,
+                    where students demonstrate coding and problem-solving abilities in
+                    competitive settings.
+                </p>
+            </header>
+
+            <ul class="grid-list justify-items-center pl-0 py-6">
+                {{ range where .Pages "Params.vignan-challenges" true }}
+                <li class="list-none p-0">
+                    {{ $img := (print .RelPermalink "img/featured.webp") }}
+                    {{ partial "card" (dict "context" . "img" $img) }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div id="tab3" class="tab">
+        <h2>Heading for Tab 3</h2>
+        <p>Content for Tab 3 goes here.</p>
+    </div> -->
+
+    <script>
+        // Function to open a specific tab
+        function showBorder(evt, tabName) {
+            // Hide borders from all buttons
+            var tabButtons = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].querySelector(".border-overlay").style.display = "none";
+            }
+            // Show border for clicked button
+            evt.currentTarget.querySelector(".border-overlay").style.display = "block";
+        }
+
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+
+            tabContent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            tabButtons = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+                // Hide borders from all buttons
+                tabButtons[i].querySelector(".border-overlay").style.display = "none";
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+
+            // Show border for active tab
+            evt.currentTarget.querySelector(".border-overlay").style.display = "block";
+        }
+
+        // Open the default tab on page load
+        document.getElementById("tab1").style.display = "block";
+        document.getElementsByClassName("tab-btn")[0].className += " active";
+    </script>
 
 </main>
 
@@ -119,14 +204,12 @@
 {{/* Layout for individual course landing page */}}
 <main class="container">
     <header class="text-center my-12">
-        <h1
-            class="lg:text-6xl mb-0 inline-block mx-auto gradient-text sm:text-2xl">{{
+        <h1 class="lg:text-6xl mb-0 inline-block mx-auto gradient-text sm:text-2xl">{{
             .Params.title }}</h1>
         <p class="text-gray3 my-1">{{ .Params.description }}</p>
     </header>
 
-    <div
-        class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+    <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
     <!-- {{ if .Params.vimeo }}
                     <div class="max-w-3xl mx-auto">
@@ -135,8 +218,7 @@
                     {{ end }} -->
 
     <div class="flex flex-col sm:flex-row justify-content">
-        <div
-            class="max-w-5xl mx-auto ancor-blue sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-2 sm:order-2 pb-4">
+        <div class="max-w-5xl mx-auto ancor-blue sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-2 sm:order-2 pb-4">
 
             <div class="max-w-3xl mx-auto">
                 {{ partial "featured" .}}
@@ -145,14 +227,11 @@
             .Params.Author)) }}
             {{ $authorImg := (print "/authors/img/" (anchorize .Params.Author)
             ".jpg") }}
-            <div class="flex items-center no-underline justify-center"
-                itemprop="author" name="{{ .Params.author }}">
-                <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}"
-                    alt="{{ $author.Title }} avatar" />
+            <div class="flex items-center no-underline justify-center" itemprop="author" name="{{ .Params.author }}">
+                <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar" />
                 <span class="flex flex-col ml-2">
                     <span class="text-lg">Authored By
-                        <a class="no-underline text-peach1"
-                            href="/authors/{{ anchorize .Params.author }}/">{{
+                        <a class="no-underline text-peach1" href="/authors/{{ anchorize .Params.author }}/">{{
                             title
                             (.Params.authorname | default .Params.author) }}</a>
                     </span>
@@ -167,16 +246,13 @@
         </div>
 
         {{ if gt (len .Pages) 0 }}
-        <div
-            class="relative w-full sm:w-1/4 order-2 md:order-1 sm:order-1 items-center mx-auto">
+        <div class="relative w-full sm:w-1/4 order-2 md:order-1 sm:order-1 items-center mx-auto">
             <div class="flex flex-col justify-center">
                 <div class="text-center">
-                    <h1
-                        class="text-3xl text-peach inline-block border-b border-peach1">Problems</h1>
+                    <h1 class="text-3xl text-peach inline-block border-b border-peach1">Problems</h1>
                     <!-- <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div> -->
                 </div>
-                <ul
-                    class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar"
+                <ul class="flex flex-col md:pl-0 md:h-screen lg:h-screen sticky top-0 overflow-auto scrollbar"
                     id="sidebar">
                     {{ range $index, $page := .Pages }}
                     <li class="flex flex-col">
@@ -209,17 +285,29 @@
     <div class="h-12"></div>
     <!-- articles comments section -->
     <h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4>
-    <span class="text-base">|</span>
-    <span>Please Reload to load comments</span>
+    <span class="flex">
+        <span class="pr-2 pb-1">Load Comments</span>
+        <span class="cursor-pointer" onclick="window.location.reload()">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" class="rotate-on-click"
+                viewBox="0,0,255.99431,255.99431" style="fill:#000000;">
+                <g fill="#d1d5db" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                        <path
+                            d="M15,3c-2.9686,0 -5.69718,1.08344 -7.79297,2.875c-0.28605,0.22772 -0.42503,0.59339 -0.36245,0.95363c0.06258,0.36023 0.31676,0.6576 0.66286,0.77549c0.3461,0.1179 0.72895,0.03753 0.99842,-0.20959c1.74821,-1.49444 4.01074,-2.39453 6.49414,-2.39453c5.19656,0 9.45099,3.93793 9.95117,9h-2.95117l4,6l4,-6h-3.05078c-0.51129,-6.14834 -5.67138,-11 -11.94922,-11zM4,10l-4,6h3.05078c0.51129,6.14834 5.67138,11 11.94922,11c2.9686,0 5.69718,-1.08344 7.79297,-2.875c0.28605,-0.22772 0.42504,-0.59339 0.36245,-0.95363c-0.06258,-0.36023 -0.31676,-0.6576 -0.66286,-0.7755c-0.3461,-0.1179 -0.72895,-0.03753 -0.99842,0.20959c-1.74821,1.49444 -4.01074,2.39453 -6.49414,2.39453c-5.19656,0 -9.45099,-3.93793 -9.95117,-9h2.95117z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+        </span>
+    </span>
     <div class="md:mr-4 lg:mr-4">
-        <script src="https://giscus.app/client.js"
-            data-repo="SERVER-X-101/SERVER-X-101" data-repo-id="R_kgDOLoz2-A"
-            data-category="Contents" data-category-id="DIC_kwDOLoz2-M4CeaGh"
-            data-mapping="title" data-strict="0"
-            data-reactions-enabled="0" data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="preferred_color_scheme" data-lang="en"
-            crossorigin="anonymous" async>
+        <script src="https://giscus.app/client.js" data-repo="SERVER-X-101/SERVER-X-101" data-repo-id="R_kgDOLoz2-A"
+            data-category="Contents" data-category-id="DIC_kwDOLoz2-M4CeaGh" data-mapping="title" data-strict="0"
+            data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top"
+            data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
             </script>
     </div>
     {{ end }}

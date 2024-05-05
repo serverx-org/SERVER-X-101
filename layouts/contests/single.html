@@ -9,7 +9,7 @@
 
 <main class="container flex flex-col-reverse md:flex-row">
 	<!-- Progress tracker -->
-	
+
 
 	<!-- Navigation Buttons -->
 	<navbar-toggle>
@@ -26,14 +26,14 @@
 			{{ end}}
 
 			<!-- Lesson tile -->
-			<li >
-				<a class="text-gray4 hover:text-gray1 align-middle"
-					href="{{ .Permalink }}">
-					
-					
+			<li>
+				<a class="text-gray4 hover:text-gray1 align-middle" href="{{ .Permalink }}">
+
+
 					<!-- <complete-icon free="{{ .Params.free }}" route="{{ .RelPermalink }}"></complete-icon> -->
-					
-					<div class="p-1 pb-2 flex items-center {{ if eq $activeRelPermalink .RelPermalink }}active-chapter{{ end }}">
+
+					<div
+						class="p-1 pb-2 flex items-center {{ if eq $activeRelPermalink .RelPermalink }}active-chapter{{ end }}">
 
 						<span class="mr-auto text-lg pr-2 inline-block align-middle ">
 							{{ .Title }}
@@ -42,7 +42,8 @@
 						{{ if eq $activeRelPermalink .RelPermalink }}
 						<div id="activeChapter" class="mr-2 ">←</div>
 						{{ else }}
-						<span class="text-xs bg-black bg-opacity-10 py-1 px-2">{{ .ReadingTime }} min{{ if (ne .ReadingTime 1) }}s{{ end }}</span>
+						<span class="text-xs bg-black bg-opacity-10 py-1 px-2">{{ .ReadingTime }} min{{ if (ne
+							.ReadingTime 1) }}s{{ end }}</span>
 						{{ end }}
 					</div>
 				</a>
@@ -52,45 +53,60 @@
 
 	</navbar-toggle>
 
-	<article itemscope itemtype="http://schema.org/Contests" class="prose dark:prose-invert pt-1 mx-auto px-3 md:px-8 min-w-0 max-w-none w-full">
+	<article itemscope itemtype="http://schema.org/Contests"
+		class="prose dark:prose-invert pt-1 mx-auto px-3 md:px-8 min-w-0 max-w-none w-full">
 		<nav class="flex items-center justify-between py-2 px-4 bg-gray8 bg-opacity-50 shadow-lg mb-6 rounded-2xl">
 			<div class="flex items-center">
 				{{with .NextInSection}}
-				<a class="flex flex-col justify-between btn btn-transparent rounded-2xl" href="{{.RelPermalink}}" title="previous page">
-					<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="16" height="16">
-						<path d="M11,23.94L.89,14.13C.31,13.55,0,12.79,0,11.99,0,11.19,.31,10.43,.88,9.87h0S11,.06,11,.06V6.99h13v10H11v6.95" fill="#f1f1f1" />
+				<a class="flex flex-col justify-between btn btn-transparent rounded-2xl" href="{{.RelPermalink}}"
+					title="previous page">
+					<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
+						width="16" height="16">
+						<path
+							d="M11,23.94L.89,14.13C.31,13.55,0,12.79,0,11.99,0,11.19,.31,10.43,.88,9.87h0S11,.06,11,.06V6.99h13v10H11v6.95"
+							fill="#f1f1f1" />
 					</svg>
 					<!-- <sub class="py-2">prev</sub> -->
 				</a>
 				{{end}}
 			</div>
-		
+
 			<div class="flex items-center justify-center">
-				<a class="flex flex-col justify-between btn btn-transparent rounded-2xl" href="{{.Parent.RelPermalink}}" title="back to contest">
-					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="16px" height="16px">
+				<a class="flex flex-col justify-between btn btn-transparent rounded-2xl" href="{{.Parent.RelPermalink}}"
+					title="back to contest">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+						id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+						xml:space="preserve" width="16px" height="16px">
 						<g>
-							<path fill="#ffbd03" d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/>
+							<path fill="#ffbd03"
+								d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z" />
 							<g>
-								<path fill="#ffbd03" d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z"/>
-								<path fill="#ffbd03" d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z"/>
+								<path fill="#ffbd03"
+									d="M362.667,383.841v128H448c35.346,0,64-28.654,64-64V253.26c0.005-11.083-4.302-21.733-12.011-29.696l-181.29-195.99    c-31.988-34.61-85.976-36.735-120.586-4.747c-1.644,1.52-3.228,3.103-4.747,4.747L12.395,223.5    C4.453,231.496-0.003,242.31,0,253.58v194.261c0,35.346,28.654,64,64,64h85.333v-128c0.399-58.172,47.366-105.676,104.073-107.044    C312.01,275.383,362.22,323.696,362.667,383.841z" />
+								<path fill="#ffbd03"
+									d="M256,319.841c-35.346,0-64,28.654-64,64v128h128v-128C320,348.495,291.346,319.841,256,319.841z" />
 							</g>
 						</g>
 					</svg>
 					<!-- <sub class="py-2">home</sub> -->
 				</a>
 			</div>
-		
+
 			<div class="flex items-center">
 				{{with .PrevInSection}}
-				<a class="flex flex-col justify-between btn btn-transparent rounded-2xl" href="{{.RelPermalink}}" title="next page">
-					<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="16" height="16">
-						<path d="M13,23.94v-6.93H0V7.01H13V.06l10.11,9.82c.58,.58,.89,1.33,.89,2.13s-.31,1.56-.88,2.13h0s-10.11,9.8-10.11,9.8" fill="#04d085" />
+				<a class="flex flex-col justify-between btn btn-transparent rounded-2xl" href="{{.RelPermalink}}"
+					title="next page">
+					<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
+						width="16" height="16">
+						<path
+							d="M13,23.94v-6.93H0V7.01H13V.06l10.11,9.82c.58,.58,.89,1.33,.89,2.13s-.31,1.56-.88,2.13h0s-10.11,9.8-10.11,9.8"
+							fill="#04d085" />
 					</svg>
 					<!-- <sub class="py-2">next</sub> -->
 				</a>
 				{{end}}
 			</div>
-		</nav>	
+		</nav>
 
 		<header class="border-b-2 border-dashed border-gray6 mb-6">
 			<h1>
@@ -109,28 +125,36 @@
 
 		<!-- contests comments section -->
 		<div class="h-12"></div>
-					
-		<!-- articles comments section -->
-		<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4> <span class="text-base">|</span> <span>Please Reload to load comments</span>
-		<div class="m-4">
-			<script src="https://giscus.app/client.js"
-				data-repo="SERVER-X-101/SERVER-X-101"
-				data-repo-id="R_kgDOLoz2-A"
-				data-category="Contests"
-				data-category-id="DIC_kwDOLoz2-M4CeaGh"
-				data-mapping="title"
-				data-strict="0"
-				data-reactions-enabled="0"
-				data-emit-metadata="0"
-				data-input-position="top"
-				data-theme="preferred_color_scheme"
-				data-lang="en"
-				crossorigin="anonymous"
-				async>
-			</script>
-		</div>	
 
-	</article>	
+		<!-- articles comments section -->
+		<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4>
+		<span class="flex">
+			<span class="pr-2 pb-1">Load Comments</span>
+			<span class="cursor-pointer" onclick="window.location.reload()">
+				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" class="rotate-on-click"
+					viewBox="0,0,255.99431,255.99431" style="fill:#000000;">
+					<g fill="#d1d5db" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+						stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+						font-family="none" font-weight="none" font-size="none" text-anchor="none"
+						style="mix-blend-mode: normal">
+						<g transform="scale(8.53333,8.53333)">
+							<path
+								d="M15,3c-2.9686,0 -5.69718,1.08344 -7.79297,2.875c-0.28605,0.22772 -0.42503,0.59339 -0.36245,0.95363c0.06258,0.36023 0.31676,0.6576 0.66286,0.77549c0.3461,0.1179 0.72895,0.03753 0.99842,-0.20959c1.74821,-1.49444 4.01074,-2.39453 6.49414,-2.39453c5.19656,0 9.45099,3.93793 9.95117,9h-2.95117l4,6l4,-6h-3.05078c-0.51129,-6.14834 -5.67138,-11 -11.94922,-11zM4,10l-4,6h3.05078c0.51129,6.14834 5.67138,11 11.94922,11c2.9686,0 5.69718,-1.08344 7.79297,-2.875c0.28605,-0.22772 0.42504,-0.59339 0.36245,-0.95363c-0.06258,-0.36023 -0.31676,-0.6576 -0.66286,-0.7755c-0.3461,-0.1179 -0.72895,-0.03753 -0.99842,0.20959c-1.74821,1.49444 -4.01074,2.39453 -6.49414,2.39453c-5.19656,0 -9.45099,-3.93793 -9.95117,-9h2.95117z">
+							</path>
+						</g>
+					</g>
+				</svg>
+			</span>
+		</span>
+		<div class="m-4">
+			<script src="https://giscus.app/client.js" data-repo="SERVER-X-101/SERVER-X-101" data-repo-id="R_kgDOLoz2-A"
+				data-category="Contests" data-category-id="DIC_kwDOLoz2-M4CeaGh" data-mapping="title" data-strict="0"
+				data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top"
+				data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
+				</script>
+		</div>
+
+	</article>
 </main>
 {{ end }}
 

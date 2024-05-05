@@ -46,8 +46,7 @@
 	</div> -->
 
 	<div class="flex flex-col sm:flex-row justify-content">
-		<article itemscope itemtype="http://schema.org/Article"
-			class=" sm:w-3/4 mb-4 sm:mb-0 order-2 sm:order-1 pb-4">
+		<article itemscope itemtype="http://schema.org/Article" class=" sm:w-3/4 mb-4 sm:mb-0 order-2 sm:order-1 pb-4">
 			<meta itemprop="datePublished" content="{{ .PublishDate }}" />
 			<meta itemprop="dateModified" content="{{ .Lastmod }}" />
 			<meta itemprop="image" content="img/featured.png" />
@@ -62,8 +61,7 @@
 					}}
 					{{ $authorImg := (print "/authors/img/" (anchorize .Params.Author) ".jpg")
 					}}
-					<a class="flex items-center no-underline" itemprop="author"
-						name="{{ .Params.author }}"
+					<a class="flex items-center no-underline" itemprop="author" name="{{ .Params.author }}"
 						href="/authors/{{ anchorize .Params.author }}/">
 						<img class="w-10 h-10 rounded-full block" src="{{ $authorImg }}"
 							alt="{{ $author.Title }} avatar">
@@ -121,11 +119,9 @@
 			<div class="mb-10"></div>
 
 			<!-- Article content -->
-			<section class="prose dark:prose-invert max-w-full lesson-content ancor-blue"
-				itemprop="articleBody">
+			<section class="prose dark:prose-invert max-w-full lesson-content ancor-blue" itemprop="articleBody">
 
-				<h1 itemprop="name headline" id="{{ anchorize .Title }}"
-					class="gradient-text">
+				<h1 itemprop="name headline" id="{{ anchorize .Title }}" class="gradient-text">
 					{{ .Title }}
 				</h1>
 
@@ -179,11 +175,9 @@
 				<!-- recommended articles -->
 				{{ if and .Params.recommended (gt (len .Params.recommended) 0) }}
 				<div class="py-1 px-3 mb-20 flex justify-between mt-3"></div>
-				<div
-					class="mx-auto w-[25%] h-[3px] my-12 bg-gradient-to-r from-blue-600 to-purple-500 rounded-full">
+				<div class="mx-auto w-[25%] h-[3px] my-12 bg-gradient-to-r from-blue-600 to-purple-500 rounded-full">
 				</div>
-				<h4
-					class="text-white inline-block my-6 border-b-2 border-gray6 ">Recommended</h4>
+				<h4 class="text-white inline-block my-6 border-b-2 border-gray6 ">Recommended</h4>
 				<ul>
 					{{ range .Params.recommended }}
 					<li>
@@ -198,29 +192,41 @@
 				<div class="h-12"></div>
 
 				<!-- articles comments section -->
-				<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4>
-				<span
-					class="text-base">|</span> <span>Please reload to load comments</span>
+				<div>
+					<h4 class="text-white inline-block border-b-2 border-gray6">Comments</h4>
+					<span class="flex">
+						<span class="pr-2 pb-1">Load Comments</span>
+						<span class="cursor-pointer" onclick="window.location.reload()">
+							<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" class="rotate-on-click"
+								viewBox="0,0,255.99431,255.99431" style="fill:#000000;">
+								<g fill="#d1d5db" fill-rule="nonzero" stroke="none" stroke-width="1"
+									stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+									stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+									font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+									<g transform="scale(8.53333,8.53333)">
+										<path
+											d="M15,3c-2.9686,0 -5.69718,1.08344 -7.79297,2.875c-0.28605,0.22772 -0.42503,0.59339 -0.36245,0.95363c0.06258,0.36023 0.31676,0.6576 0.66286,0.77549c0.3461,0.1179 0.72895,0.03753 0.99842,-0.20959c1.74821,-1.49444 4.01074,-2.39453 6.49414,-2.39453c5.19656,0 9.45099,3.93793 9.95117,9h-2.95117l4,6l4,-6h-3.05078c-0.51129,-6.14834 -5.67138,-11 -11.94922,-11zM4,10l-4,6h3.05078c0.51129,6.14834 5.67138,11 11.94922,11c2.9686,0 5.69718,-1.08344 7.79297,-2.875c0.28605,-0.22772 0.42504,-0.59339 0.36245,-0.95363c-0.06258,-0.36023 -0.31676,-0.6576 -0.66286,-0.7755c-0.3461,-0.1179 -0.72895,-0.03753 -0.99842,0.20959c-1.74821,1.49444 -4.01074,2.39453 -6.49414,2.39453c-5.19656,0 -9.45099,-3.93793 -9.95117,-9h2.95117z">
+										</path>
+									</g>
+								</g>
+							</svg>
+						</span>
+					</span>
+				</div>
 				<div class="m-4">
-					<script src="https://giscus.app/client.js"
-						data-repo="SERVER-X-101/SERVER-X-101"
-						data-repo-id="R_kgDOLoz2-A" data-category="Articles"
-						data-category-id="DIC_kwDOLoz2-M4CeaGa"
-						data-mapping="title" data-strict="0" data-reactions-enabled="1"
-						data-emit-metadata="0"
-						data-input-position="top" data-theme="preferred_color_scheme"
-						data-lang="en"
+					<script src="https://giscus.app/client.js" data-repo="SERVER-X-101/SERVER-X-101"
+						data-repo-id="R_kgDOLoz2-A" data-category="Articles" data-category-id="DIC_kwDOLoz2-M4CeaGa"
+						data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0"
+						data-input-position="top" data-theme="preferred_color_scheme" data-lang="en"
 						crossorigin="anonymous" async>
 						</script>
 				</div>
-
 			</section>
 
 		</article>
 		<!-- TOC fixed sidebar -->
 		{{ if not .Params.disable_toc }}
-		<aside
-			class="tableOfContents relative w-full sm:w-1/4 order-1 sm:order-2 items-center mx-auto">
+		<aside class="tableOfContents relative w-full sm:w-1/4 order-1 sm:order-2 items-center mx-auto">
 			{{ .TableOfContents }}
 		</aside>
 		{{ end }}

@@ -1,21 +1,28 @@
 {{ define "header" }}
-  {{ partial "topnav" }}
+{{ partial "topnav" }}
 {{ end }}
 {{ define "main" }}
 <main class="container prose dark:prose-invert">
-  <header class="text-left mb-8 mt-20 pl-4">
+  <header class="text-left mb-8 mt-14 pl-4">
     <h1 class="text-5xl mb-1">Authors</h1>
     <p class="my-0 text-gray3">We greatly value the expertise contributed by our authors to our articles.</p>
   </header>
 
-  <div class="mx-auto w-auto h-[2px] my-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
-  
+  <div class="mx-auto w-auto h-[2px] mt-12 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
+
   {{ range .Pages }}
   <article itemscope itemtype="http://schema.org/author">
-        <a class="mb-6 no-underline" href="{{ .RelPermalink }}">
-        <h2 class="gradient-text inline-block mb-0">{{ .Title }}</h2>
-      </a>  
-        <span class="text-gray3 ancor-blue">{{ .Content }}</span>
+    
+    <a class="mb-6 no-underline" href="{{ .RelPermalink }}">
+      <span class="flex flex-row items-center justify-start">
+        <span class="w-14 h-14">
+          {{ $authorImg := (print "/authors/img/" (.RelPermalink | path.Base) ".jpg") }}
+          <img src="{{ $authorImg }}" alt="author image" class="w-full h-full mr-4 rounded-full select-none drag-none">
+        </span>
+        <h2 class="gradient-text inline-block my-0 mt-14 ml-2">{{ .Title }}</h2>
+      </span>
+    </a>
+    <span class="text-gray3 ancor-blue line-clamp-1">{{ .Content }}</span>
   </article>
   {{ end }}
 </main>
@@ -23,5 +30,5 @@
 
 
 {{ define "footer" }}
-  {{ partial "footer" }}
+{{ partial "footer" }}
 {{ end }}

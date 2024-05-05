@@ -46,6 +46,9 @@ module.exports = {
         '4xl': '0 5px 20px rgb(0 0 0 / 90%)',
         'dark-cyan': '0 4px 6px -1px rgba(0, 139, 139, 0.1), 0 2px 4px -1px rgba(0, 139, 139, 0.06)',
       },
+      animation: {
+        'spin-slow': 'spin 5s linear infinite',
+      },
       typography: {
         DEFAULT: {
           css: {

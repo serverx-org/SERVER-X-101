@@ -9,7 +9,7 @@
 
 <style lang="scss">
   div {
-    @apply fixed w-full top-0 left-0 h-1 opacity-0 -translate-x-full transition-all;
+    @apply fixed w-full bottom-0 left-0 h-1 opacity-0 -translate-x-full transition-all;
   }
   .show {
     @apply opacity-100 translate-x-0;

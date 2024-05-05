@@ -19,7 +19,7 @@ pre:hover .copy-code {
 }
 
 .copy-code {
-  @apply text-sm text-gray1 top-1 right-1 absolute m-1 border border-gray6 border-opacity-90 rounded-lg mb-4;
+  @apply text-sm text-gray1 top-1 right-1 absolute m-1 border-0 border-gray6 border-opacity-90 rounded-lg mb-4;
   display: none;
   background: transparent;
   padding: 0px 5px;
