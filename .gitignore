@@ -13,7 +13,7 @@ dist-ssr
 *.local
 
 # Editor directories and files
-# .gitignore
+.gitignore
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -36,5 +36,3 @@ data/svelte.json
 *test
 *public
 public
-data
-data
