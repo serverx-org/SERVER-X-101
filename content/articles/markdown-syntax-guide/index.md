@@ -220,7 +220,7 @@ Certainly! Below are various Markdown stylings you can use:
 
 <div class="highlight">
 <pre class="chroma">
-<img src="/articles/markdown-syntax-guide/img/sample.png"/>
+<img src="/articles/markdown-syntax-guide/img/sample.png" alt="Markdown-Style-test-cover"/>
 </pre>
 </div>
 
