@@ -285,7 +285,7 @@
         <div class="max-w-5xl mx-auto ancor-blue sm:w-3/4 mb-4 sm:mb-0 order-1 md:order-2 sm:order-2 pb-4">
 
             <div class="max-w-3xl mx-auto">
-                {{ partial "featured" .}}
+                {{ partial "contest_featured" .}}
             </div>
             {{ $author := .Site.GetPage (print "/authors/" (anchorize
             .Params.Author)) }}
