@@ -127,8 +127,12 @@ h6 {
 }
 
 @keyframes rotateAnimation {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 svg {
@@ -173,4 +177,36 @@ video-player {
     font-family: "Mea Culpa", cursive;
     font-weight: medium;
     text-transform: uppercase;
+}
+
+.card_load {
+    @apply w-full h-[12rem];
+    // width: 70px;
+    // height: 70px;
+    position: relative;
+    float: left;
+    background: linear-gradient(120deg, #39487b 30%, #4c5fa1 38%, #4c5fa1 40%, #39487b 48%);
+    // border-radius: 50%;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: load89234 2s infinite;
+}
+
+.featured_card_load {
+    @apply w-full h-[38rem];
+    // width: 70px;
+    // height: 70px;
+    position: relative;
+    float: left;
+    background: linear-gradient(120deg, #39487b 30%, #4c5fa1 38%, #4c5fa1 40%, #39487b 48%);
+    // border-radius: 50%;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: load89234 2s infinite;
+}
+
+@keyframes load89234 {
+    100% {
+        background-position: -100% 0;
+    }
 }
