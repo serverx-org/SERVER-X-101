@@ -19,7 +19,14 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             transition: transform 0.3s ease;
+            cursor: grab;
+            user-select: none;
 
+        }
+
+        .grid-list:active {
+            cursor: grabbing;
+            /* Set cursor to grabbing while dragging */
         }
 
         .grid-list::-webkit-scrollbar {
@@ -96,8 +103,8 @@
                 </div>
                 <span class="bg-[#10141d] rounded-[16px] h-[76px] flex items-center justify-center z-50 ">
 
-                    <img class="relative rounded-2xl cover-fill" src="/img/practice_problems.png" alt="Practice Problems"
-                    width="140px">
+                    <img class="relative rounded-2xl cover-fill card_load text-center !h-[76px] !w-[140px]"
+                        src="/img/practice_problems.png" alt="Practice Problems" width="140px">
                 </span>
             </div>
         </button>
@@ -108,8 +115,8 @@
                     class="border-overlay animate-spin-slow absolute -top-40 -bottom-40 left-10 right-10 bg-gradient-to-r from-transparent via-[#ff5d75] to-transparent">
                 </div>
                 <span class="bg-[#10141d] rounded-[16px] h-[76px] flex items-center justify-center z-50">
-                    <img class="relative rounded-2xl cover-fill" src="/img/vignan_challenge.png" alt="Vignan Challenges"
-                    width="140px">
+                    <img class="relative rounded-2xl cover-fill card_load text-center !h-[76px] !w-[140px]"
+                        src="/img/vignan_challenge.png" alt="Vignan Challenges" width="140px">
                 </span>
             </div>
         </button>
@@ -130,7 +137,7 @@
                 {{ range where .Pages "Params.practice" true }}
                 <li class="list-none p-0">
                     {{ $img := (print .RelPermalink "img/featured.webp") }}
-                    {{ partial "card" (dict "context" . "img" $img) }}
+                    {{ partial "contest_card" (dict "context" . "img" $img) }}
                 </li>
                 {{ end }}
             </ul>
@@ -152,7 +159,7 @@
                 {{ range where .Pages "Params.vignan-challenges" true }}
                 <li class="list-none p-0">
                     {{ $img := (print .RelPermalink "img/featured.webp") }}
-                    {{ partial "card" (dict "context" . "img" $img) }}
+                    {{ partial "contest_card" (dict "context" . "img" $img) }}
                 </li>
                 {{ end }}
             </ul>
@@ -201,6 +208,58 @@
         // Open the default tab on page load
         document.getElementById("tab1").style.display = "block";
         document.getElementsByClassName("tab-btn")[0].className += " active";
+
+        let isMouseDown = false;
+        let startX;
+        let scrollLeft;
+
+        const gridList = document.querySelector('.grid-list');
+
+        gridList.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            startX = e.pageX - gridList.offsetLeft;
+            scrollLeft = gridList.scrollLeft;
+            gridList.style.cursor = 'grabbing'; /* Set cursor to grabbing while dragging */
+        });
+
+        gridList.addEventListener('mouseleave', () => {
+            isMouseDown = false;
+            gridList.style.cursor = 'grab'; /* Reset cursor on leave */
+        });
+
+        gridList.addEventListener('mouseup', () => {
+            isMouseDown = false;
+            gridList.style.cursor = 'grab'; /* Reset cursor on mouse up */
+        });
+
+        gridList.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            e.preventDefault();
+            const x = e.pageX - gridList.offsetLeft;
+            const walk = (x - startX) * 2; // Adjust scroll speed
+            gridList.scrollLeft = scrollLeft - walk;
+        });
+
+        // Add smooth drag scroll effect
+        let lastScrollX = 0;
+        let newScrollX = 0;
+
+        function smoothScroll() {
+            newScrollX = gridList.scrollLeft;
+            const diff = newScrollX - lastScrollX;
+            lastScrollX = newScrollX;
+            if (Math.abs(diff) > 1) {
+                requestAnimationFrame(smoothScroll);
+                gridList.scrollLeft += diff * 0.1; // Adjust smoothness factor
+            }
+        }
+
+        gridList.addEventListener('scroll', () => {
+            if (isMouseDown) return;
+            lastScrollX = gridList.scrollLeft;
+            smoothScroll();
+        });
+
     </script>
 
 </main>
