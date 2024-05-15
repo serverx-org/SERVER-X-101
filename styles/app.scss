@@ -179,20 +179,35 @@ video-player {
     text-transform: uppercase;
 }
 
-.card_load {
-    @apply w-full h-[12rem];
+// .card_load {
+//     @apply py-[26.125%]; /* 9/16 aspect ratio */
+//     position: relative;
+//     overflow: hidden;
+//     float: left;
+//     background: linear-gradient(120deg, #39487b 30%, #4c5fa1 38%, #4c5fa1 40%, #39487b 48%);
+//     background-size: 200% 100%;
+//     background-position: 100% 0;
+//     animation: load89234 2s infinite;
+// }
+
+
+.card_load_wrapper {
     position: relative;
-    float: left;
-    background: linear-gradient(120deg, #39487b 30%, #4c5fa1 38%, #4c5fa1 40%, #39487b 48%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    animation: load89234 2s infinite;
+    width: 100%;
 }
 
-.featured_card_load {
-    @apply w-full h-[38rem];
-    position: relative;
-    float: left;
+.card_load_wrapper::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 9/16 aspect ratio (9 divided by 16 gives 0.5625 or 56.25%) */
+}
+
+.card_load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(120deg, #39487b 30%, #4c5fa1 38%, #4c5fa1 40%, #39487b 48%);
     background-size: 200% 100%;
     background-position: 100% 0;

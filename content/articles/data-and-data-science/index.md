@@ -1,6 +1,6 @@
 ---
 title: Data and Data Science
-description: How to start Data Science Journey
+description: Data is simply information, but in its raw form. It can be numbers, text, images, videos, or even sounds.  On its own, data might seem like random noise. However, the true magic lies in its ability to be transformed into valuable insights.
 author: Gowrav Sai Veeramallu
 lastmod: 2024-03-31
 

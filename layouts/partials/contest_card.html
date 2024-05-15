@@ -11,7 +11,9 @@
         {{/* make sure file exists */}}
         {{ $img := cond (fileExists $img) $img "/img/default-cover.webp" }}
         
-        <img class="w-full m-0 mb-1 rounded-t-lg card_load text-center !h-[13rem]" src="{{ $img }}" alt="{{ .context.Title }}">
+        <div class="card_load_wrapper">
+            <img class="w-full m-0 mb-1 rounded-t-lg card_load text-center" src="{{ $img }}" alt="{{ .context.Title }}">
+        </div>
         
         <div class="flex flex-col justify-between flex-1 p-5">
             <section class="">

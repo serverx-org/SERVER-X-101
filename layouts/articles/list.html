@@ -13,16 +13,17 @@
 
   <div class="mx-auto w-auto h-[2px] my-8 mb-8 bg-gradient-to-r from-peach3 to-peach1 rounded-full"></div>
 
-  <div class="container pb-4">
-
-    <!-- featured card -->
+  
+  <!-- featured card -->
+  <div class=" pb-4 mx-8">
     <div class="px-4 lg:mx-20 md:mx-4 flex items-center justify-center bg-[#283255]/75 border border-white rounded-3xl shadow-[5px_3px_0px_1px_#f7fafc]">
-      <div class="grid lg:grid-cols-2 md:grid-cols-1 items-center justify-center">
-        <a href="/articles/dsa-mastery/">
-          <span class="overflow-hidden rounded-lg lg:h-[20rem] md:h-[18rem] flex items-center justify-center">
+      <div class="grid lg:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 items-center justify-center">
+        <a class="pb-8" href="/articles/dsa-mastery/">
+          <span class="overflow-hidden rounded-lg flex items-center justify-center">
             {{ $img := "/img/featured-articles/dsa-mastery/featured.webp" }}
-            <img class="overflow-hidden object-fit rounded-lg hover:scale-105 transition duration-200 card_load text-center !h-[20rem]"
-              src="{{ $img }}" alt="Featured Image" width="680px">
+            <div class="card_load_wrapper">
+              <img class=" object-center flex items-center justify-center align-middle rounded-lg hover:scale-105 transition duration-200 card_load text-center" src="{{ $img }}" alt="Featured Image" >
+            </div>
           </span>
         </a>
 
