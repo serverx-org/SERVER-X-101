@@ -9,4 +9,4 @@ links:
     github: https://github.com/GowravSai26
 ---
 
-Gowrav Sai Veeramallu, a Computer Science student, is a contributor at [**server-x-101**](https://github.com/server-x-101/).
+Gowrav Sai Veeramallu, a Computer Science student, is a contributor at [**server-x-101**](https://serverx.org.in/).

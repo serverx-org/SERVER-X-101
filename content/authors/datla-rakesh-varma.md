@@ -9,4 +9,4 @@ links:
     github: https://github.com/DatlaRakeshVarma
 ---
 
-Datla Rakesh Varma, a Computer Science student, is a contributor at [**server-x-101**](https://github.com/server-x-101/).
+Datla Rakesh Varma, a Computer Science student, is a contributor at [**server-x-101**](https://www.serverx.org.in/).

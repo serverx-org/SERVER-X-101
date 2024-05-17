@@ -1,7 +1,7 @@
 ---
 title: Beginner-Friendly Data Science Projects
 description: Embark on Your Data Science Journey - Beginner-Friendly Projects to Get You Started
-author: Geeth Sowri
+author: Lakshmi Charvy
 lastmod: 2024-02-24T08:36:36-07:00
 tags: 
   - data-science
