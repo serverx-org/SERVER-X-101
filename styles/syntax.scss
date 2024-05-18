@@ -211,3 +211,13 @@ pre:hover .copy-code {
 /* GenericTraceback */ .chroma .gt {  }
 /* GenericUnderline */ .chroma .gl { @apply underline; }
 /* TextWhitespace */ .chroma .w {  }
+
+h3 {
+  @apply flex items-center justify-start gap-2;
+}
+
+#TableOfContents {
+  a {
+    @apply flex items-center justify-start gap-2;
+  }
+}

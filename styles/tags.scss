@@ -156,10 +156,13 @@
     font-weight: bold;
 }
 
-.tag-frontend {
-    background: #3498db;
+.tag-frontend, .tag-front-end {
+    background-image: linear-gradient( 102.1deg,  #00A761 8.7%, #00FFB2 88.1% );
     color: #000000;
-    font-weight: bold;
+}
+.tag-backend, .tag-back-end {
+    background-image: linear-gradient( 102.1deg,  #0061FF 8.7%, #60EFFF 88.1% );
+    color: #000000;
 }
 
 .tag-web-dev, .tag-web {
@@ -255,6 +258,12 @@
     font-weight: bold;
 }
 
+.tag-tailwind, .tag-tailwind-css {
+    background-image: linear-gradient( 102.1deg,  #60efff 8.7%, #0061ff 88.1% );
+    color: #000000;
+    // font-weight: bold;
+}
+
 .tag-datascience, .tag-data-science, .tag-data-and-data-science {
     background-image: linear-gradient( 102.1deg,  #ff930f 8.7%, #fff95b 88.1% );
     color: #000000;
@@ -289,5 +298,12 @@
     background-image: linear-gradient( 102.1deg,  #239eab 0%, #74deee 88.1% );
     color: #000000;
     font-weight: bold;
+}
+
+
+.tag-html, .tag-html-5 {
+    background-image: linear-gradient( 102.1deg,  #f94100 0%, #ff5f00 88.1% );
+    color: #ffffff;
+    // font-weight: bold;
 }
 

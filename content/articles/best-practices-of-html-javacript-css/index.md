@@ -7,7 +7,7 @@ tags:
   - html
   - css
   - javascript
-draft: true
+draft: false
 ---
 
 In the rapidly evolving world of web development, creating applications that are both performant and maintainable requires adherence to best practices in HTML, JavaScript, and CSS. These practices not only enhance the user experience but also make the code easier to manage and scale. This article outlines essential guidelines for writing clean, efficient, and accessible code across these three core web technologies.
