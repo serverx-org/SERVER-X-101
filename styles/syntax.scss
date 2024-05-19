@@ -221,3 +221,22 @@ h3 {
     @apply flex items-center justify-start gap-2;
   }
 }
+
+
+
+li code {
+  @apply bg-gray2/10 rounded-md px-1.5; 
+  position: relative;
+  display: inline-block;
+}
+
+li code::before,
+li code::after {
+  content: '';
+  position: absolute;
+  visibility: hidden;
+}
+
+img {
+  @apply rounded-md;
+}

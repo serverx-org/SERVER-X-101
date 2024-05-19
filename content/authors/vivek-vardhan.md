@@ -1,9 +1,12 @@
 ---
 title: Vivek Vardhan
-date: 2024-05-16T09:32:30-07:00
+date: 2024-05-19
+draft: false
 
-links:
+links: 
+    linkedin: https://www.linkedin.com/in/vivek-vardhan-418843268/
+    medium: https://medium.com/@vivekvardhan0310
     github: https://github.com/vivek-310
 ---
 
-Hi! I am Vivek Vardhan, a Computer Science student.
+Vivek Vardhan, a Computer Science student, is a contributor at [**server-x-101**](https:serverx.org.in/).
