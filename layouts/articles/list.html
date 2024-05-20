@@ -18,16 +18,16 @@
   <div class=" pb-4 mx-8">
     <div class="px-4 lg:mx-20 md:mx-4 flex items-center justify-center bg-[#283255]/75 border border-white rounded-3xl shadow-[5px_3px_0px_1px_#f7fafc]">
       <div class="grid lg:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 items-center justify-center">
-        <a class="pb-8" href="/articles/machine-learning-beginner-tools/">
-          <span class="overflow-hidden rounded-lg flex items-center justify-center">
+        <a class="" href="/articles/machine-learning-beginner-tools/">
+          <span class="lg:overflow-hidden md:block rounded-lg flex items-center justify-center mb-8">
             {{ $img := "/img/featured-articles/machine-learning-beginner-tools/featured.webp" }}
-            <div class="card_load_wrapper">
-              <img class=" object-center flex items-center pb-8 justify-center align-middle rounded-lg hover:scale-105 transition duration-200 card_load text-center" src="{{ $img }}" alt="Featured Image" >
+            <div class="card_load_wrapper rounded-xl">
+              <img class="hover:scale-105 transition duration-200 card_load text-center" src="{{ $img }}" alt="Featured Image" >
             </div>
           </span>
         </a>
 
-        <div class="lg:my-4 md:my-4 lg:px-8 md:px-2">
+        <div class="mt-4 lg:px-8 md:px-2">
           <div class="pb-2 text-[#58e6d9] text-lg">Weekly Digest</div>
           <div class=" uppercase text-3xl font-bold font-rowdies flex flex-col">
             <a class=" hover:underline hover:underline-offset-8 transition-all duration-300 no-underline"
@@ -74,7 +74,7 @@
   </div>
 
   <div class="h-6"></div>
-  <div class="text-sm sm:text-base md:text-lg lg:text-lg">
+  <div class="text-xs sm:text-base md:text-lg lg:text-lg">
     {{ template "_internal/pagination.html" . }}
   </div>
 </main>
