@@ -12,5 +12,21 @@ jobs:
     - uses: actions/first-interaction@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Message that will be displayed on users' first issue"
-        pr-message: "Message that will be displayed on users' first pull request"
+        issue-message: |
+          ### Welcome to the Project, @{{ sender.login }}! 👋
+
+          Thank you for opening your first issue with us. We appreciate your contribution and are excited to work with you. Please make sure to provide all necessary details in your issue to help us address it effectively.
+
+          Our team will review your submission and provide feedback as soon as possible. If you have any questions, feel free to ask. We are here to help!
+
+          Best regards,
+          **• SERVER X**
+        pr-message: |
+          ### Welcome to the Project, @{{ sender.login }}! 👋
+
+          Thank you for submitting your first pull request. We value your contribution and are excited to review your changes. Please ensure your PR complies with our contribution guidelines and that all checks pass.
+
+          Our team will review your pull request and provide feedback promptly. If you need any assistance, don't hesitate to reach out. We are here to support you!
+
+          Best regards,
+          **• SERVER X**
