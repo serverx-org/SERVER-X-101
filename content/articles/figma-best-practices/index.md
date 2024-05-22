@@ -6,7 +6,7 @@ lastmod: 2024-05-19
 tags: 
   - figma
   - designing
-draft: true
+draft: false
 ---
 
 

@@ -2,10 +2,10 @@
 title: Pre-requisites to Learning Blockchain
 description: Welcome to your first step in becoming a blockchain expert! This guide will help you understand the basics of blockchain technology in a simple and engaging way. Let's dive in!
 author: Sujith Srikar
-lastmod: 2024-05-19
+lastmod: 2024-05-19T07:12:12-07:00
 tags: 
   - blockchain
-draft: true
+draft: false
 ---
 
 Welcome to your first step in becoming a blockchain expert! This guide will help you understand the basics of blockchain technology in a simple and engaging way. Let's dive in!
