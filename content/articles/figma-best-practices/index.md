@@ -38,7 +38,7 @@ To excel as a UX designer, immerse yourself in various design systems; kickstart
 - Frames in Figma are like folders that help you keep your designs neat and organized. Instead of using groups or rectangles, use frames for everything. They offer more features and make your design easier to manage.
 - **Pro Tip:** Frames are versatile. Use them for layout grids, auto-layouts, constraints, and styles to streamline your design process.
 
-![Design Organization](Aspose.Words.c17ccd35-5e3c-4c51-9215-52e685ef7cfa.004.jpeg)
+![Design Organization](img4.jpeg)
 
 ### 5. Make Use of Constraints
 
@@ -51,13 +51,13 @@ To excel as a UX designer, immerse yourself in various design systems; kickstart
 
 - To make icons look uniform, place each icon inside a frame of consistent size (like 24x24 pixels). Adjust the padding inside the frame to ensure they are evenly spaced.
 
-![Icon Vectors](Aspose.Words.c17ccd35-5e3c-4c51-9215-52e685ef7cfa.006.jpeg)
+![Icon Vectors](img6.jpeg)
 
 ### 7. "Tidy" Spacing Between Objects
 
 - Use the "tidy" button in Figma to align and space objects evenly. These practices help you create professional and clean designs efficiently, making your workflow smoother and more enjoyable.
 
-![Tidy Spacing](Aspose.Words.c17ccd35-5e3c-4c51-9215-52e685ef7cfa.007.jpeg)
+![Tidy Spacing](img7.jpeg)
 
 ### 8. Quickly Measure Distances Between Objects
 
