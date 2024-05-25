@@ -2,7 +2,7 @@
 title: Machine Learning Beginner Tools
 description: A popular JavaScript library for building user interfaces, in conjunction with Tailwind CSS, a utility-first CSS framework.
 author: Pavan Sriram Kannuri
-lastmod: 2023-05-17
+lastmod: 2024-05-20
 tags: 
   - machine-learning
   - utility

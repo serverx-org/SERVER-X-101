@@ -2,12 +2,12 @@
 title: Prerequisites for Using GitHub, GitLab, and Bitbucket
 description: These platforms have transformed the way developers collaborate, making it easier to manage code, track issues, and automate workflows.
 author: Vivek Vardhan
-lastmod: 2024-05-16T13:36:36-07:00
+lastmod: 2024-05-24T13:36:36-07:00
 tags:
   - github
   - gitlab
   - bitbucket
-draft: true
+draft: false
 ---
 
 ## Introduction

@@ -2,11 +2,11 @@
 title: Frontend vs Backend
 description: Web development is a multifaceted field, involving various technologies and processes to create functional, aesthetically pleasing, and efficient websites and web applications.
 author: Lohith Lalam
-lastmod: 2024-05-16T14:12:12-07:00
+lastmod: 2023-05-19T23:12:12-07:00
 tags: 
   - frontend
   - backend
-draft: true
+draft: false
 ---
 
 
