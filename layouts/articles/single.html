@@ -234,7 +234,7 @@
 		</article>
 		<!-- TOC fixed sidebar -->
 		{{ if not .Params.disable_toc }}
-		<aside class="tableOfContents relative w-full sm:w-1/4 order-1 sm:order-2 items-center mx-auto">
+		<aside class="tableOfContents relative w-full sm:w-1/4 order-1 sm:order-2 items-center mx-auto max-h-[80vh] overflow-hidden overflow-y-auto">
 			{{ .TableOfContents }}
 		</aside>
 		{{ end }}
