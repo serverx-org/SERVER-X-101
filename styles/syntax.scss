@@ -29,14 +29,12 @@ pre:hover .copy-code {
 }
 
 .copy-code.copied {
-  // display: block;
   @apply text-sm  text-green-500;
   display: none;
   transition: width 1s ease;
 }
 
 .copy-code.copied button {
-  // display: block;
   @apply text-sm  text-green-500;
   transition: width 1s ease;
 }
