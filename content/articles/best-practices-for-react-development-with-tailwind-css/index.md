@@ -6,7 +6,7 @@ author: Pentakota Avilash
 lastmod: 2024-05-16T13:12:12-07:00
 tags: 
   - react
-  - tailwind
+  - tailwind-css
 draft: false
 ---
 
@@ -14,6 +14,7 @@ draft: false
 
 - [Kulsoom Nisha](/authors/kulsoom-nisha/)
 - [Pentakota Avilash](/authors/pentakota-avilash/)
+- [Geeth Sowri](/authors/geeth-sowri/)
 
 ---
 
@@ -82,54 +83,54 @@ React and Tailwind CSS have become highly popular in the web development communi
 - **PurgeCSS**: Enable PurgeCSS in your Tailwind configuration to remove unused CSS in production, reducing file size.
 - **JIT Mode**: Use Just-in-Time (JIT) mode for faster build times and on-demand generation of styles.
 
-### Integrating React with Tailwind CSS
+## Integrating React with Tailwind CSS
 
-#### Setup
+### Setup
 
-1. **Install Tailwind CSS** using npm or yarn.
+1. Install Tailwind CSS using npm or yarn.
 
-    ```bash
-    npm install tailwindcss
-    npx tailwindcss init
-    ```
+   ```sh
+   npm install tailwindcss
+   npx tailwindcss init
+   ```
 
-2. **Configuration**:
-    Configure `tailwind.config.js` and `postcss.config.js` to include Tailwind’s directives. Import Tailwind styles in your main CSS file.
+2. Configuration:
+Configure tailwind.config.js and postcss.config.js to include Tailwind’s directives.
+Import Tailwind styles in your main CSS file.
 
-    ```css
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-    ```
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
 
-#### Usage in Components
-
+3. Usage in Components:
 Apply Tailwind’s utility classes directly in React components.
 
-```javascript
-import React from 'react';
+   ```javascript
 
-const Button = () => (
-  <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-    Click Me
-  </button>
-);
+   import React from 'react';
 
-export default Button;
-```
+   const Button = () => (
+     <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+       Click Me
+     </button>
+   );
 
-#### Custom Components
+   export default Button;
+   ```
+
+## Custom Components
 
 Create reusable components with Tailwind CSS.
 
 ```javascript
+
 const Card = ({ title, description }) => (
   <div className="max-w-sm rounded overflow-hidden shadow-lg">
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{title}</div>
-      <p className="text-gray-700 text-base">
-        {description}
-      </p>
+      <p className="text-gray-700 text-base">{description}</p>
     </div>
   </div>
 );
@@ -137,13 +138,14 @@ const Card = ({ title, description }) => (
 export default Card;
 ```
 
-#### More Examples of React Components Styled with Tailwind CSS
+Here are more examples of React components styled with Tailwind CSS. These examples cover various common UI elements like buttons, forms, modals, and navigation bars.
 
-##### Example 1: Button Component
+1. Example 1: Button Component
 
 A simple button component with different styles for primary and secondary buttons.
 
 ```javascript
+
 import React from 'react';
 
 const Button = ({ type = 'primary', children, onClick }) => {
@@ -163,11 +165,12 @@ const Button = ({ type = 'primary', children, onClick }) => {
 export default Button;
 ```
 
-##### Example 2: Form Component
+2. Example 2: Form Component
 
 A form component with input fields styled using Tailwind CSS.
 
 ```javascript
+
 import React, { useState } from 'react';
 
 const Form = () => {
@@ -220,7 +223,7 @@ const Form = () => {
 export default Form;
 ```
 
-##### Example 3: Modal Component
+3. Example 3: Modal Component
 
 A modal component that can be toggled open and closed.
 
@@ -264,11 +267,12 @@ const App = () => {
 export default App;
 ```
 
-##### Example 4: Navigation Bar Component
+4. Example 4: Navigation Bar Component
 
 A responsive navigation bar component.
 
 ```javascript
+
 import React from 'react';
 
 const NavBar = () => {
@@ -277,18 +281,10 @@ const NavBar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-lg font-semibold">MyApp</div>
         <div className="hidden md:flex space-x-4">
-          <a href="#home" className="text-gray-300 hover:text-white">
-            Home
-          </a>
-          <a href="#about" className="text-gray-300 hover:text-white">
-            About
-          </a>
-          <a href="#contact" className="text-gray-300 hover:text-white">
-            Contact
-          </a>
-       
-
- </div>
+          <a href="#home" className="text-gray-300 hover:text-white">Home</a>
+          <a href="#about" className="text-gray-300 hover:text-white">About</a>
+          <a href="#contact" className="text-gray-300 hover:text-white">Contact</a>
+        </div>
       </div>
     </nav>
   );
@@ -297,11 +293,12 @@ const NavBar = () => {
 export default NavBar;
 ```
 
-##### Example 5: Card Component
+1. Example 5: Card Component
 
 A card component for displaying content in a structured format.
 
 ```javascript
+
 import React from 'react';
 
 const Card = ({ title, description }) => {
@@ -314,8 +311,6 @@ const Card = ({ title, description }) => {
     </div>
   );
 };
-
-export default Card;
 ```
 
 ### Component-Driven Development
